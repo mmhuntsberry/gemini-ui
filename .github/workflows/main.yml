@@ -5,40 +5,27 @@ on:
       - feature/*
       - stage/*
       - prod/*
-
 jobs:
-  deploy-feature:
+  deploy-gds-web:
     runs-on: ubuntu-20.04
-    env:
-      NODE_VERSION: 14.x
-      BRANCH: feature
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-        with:
-          ref: ${{ github.ref }}
       - name: Install dependencies
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-      - name: Install Storybook
-        run: npm install @storybook/react -D
+        run: npm install
       - name: Build Storybook
-        run: npm run build-storybook
+        run: npm run prod:gds-web
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy
+        uses: JamesIves/github-pages-deploy@4.1.1
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ env.BRANCH }}
-          folder: storybook
+          token: ${{ secrets.GEMINI_UI }}
+          branch: ${{ github.ref }}
+          folder: packages/gds-web/storybook-static
           cleanup: false
           single-commit: true
-          commit-message: "Deploy Storybook to ${env.BRANCH}"
+          commit-message: "Deploy Storybook to ${github.ref}"
           commit-username: "GitHub Actions"
           commit-email: "actions@github.com"
-          publish-dir: ./storybook-static
-          cname: example.com
-          custom-domain: example.com
           allow-empty-commit: true
           force-orphan: false
           skip-cleanup: false
