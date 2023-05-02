@@ -2,16 +2,16 @@
 
 // Backgrounds
 button[mode="light"][color="primary"] {
-  box-shadow: var(--gds-primary-500) 0px 0px 0px 2px inset;
+  box-shadow: var(--gds-accent-500) 0px 0px 0px 2px inset;
 
   &:hover:enabled {
-    background-color: var(--gds-primary-600);
-    box-shadow: var(--gds-primary-600) 0px 0px 0px 2px inset;
+    background-color: var(--gds-accent-600);
+    box-shadow: var(--gds-accent-600) 0px 0px 0px 2px inset;
   }
 
   &:focus-visible {
     outline: 6px solid rgba(#958cf8, 0.16);
-    box-shadow: var(--gds-primary-600) 0px 0px 0px 2px inset;
+    box-shadow: var(--gds-accent-600) 0px 0px 0px 2px inset;
   }
 
   &:hover:active:enabled {
@@ -74,7 +74,7 @@ button[mode="light"][color="danger"] {
 
 // Background
 button[background="solid"][mode="light"][color="primary"] {
-  background-color: var(--gds-primary-500);
+  background-color: var(--gds-accent-500);
 }
 
 button[background="solid"][color="secondary"][mode="light"] {
@@ -99,11 +99,11 @@ button[background="outlined"][mode="light"] {
 }
 
 button[background="outlined"][color="primary"][mode="light"] {
-  color: var(--gds-primary-500);
+  color: var(--gds-accent-500);
 
   &:hover:enabled {
-    background-color: var(--gds-primary-100);
-    box-shadow: var(--gds-primary-500) 0px 0px 0px 2px inset;
+    background-color: var(--gds-accent-100);
+    box-shadow: var(--gds-accent-500) 0px 0px 0px 2px inset;
   }
 }
 
@@ -156,7 +156,7 @@ button[background="transparent"][mode="light"] {
 }
 
 button[background="transparent"][color="primary"][mode="light"] {
-  color: var(--gds-primary-500);
+  color: var(--gds-accent-500);
 }
 
 button[background="transparent"][color="secondary"][mode="light"] {
