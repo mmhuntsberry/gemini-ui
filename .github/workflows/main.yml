@@ -1,0 +1,47 @@
+name: Deploy Storybook to GitHub Pages
+on:
+  push:
+    branches:
+      - feature/*
+      - stage/*
+      - prod/*
+
+jobs:
+  deploy-feature:
+    runs-on: ubuntu-20.04
+    env:
+      NODE_VERSION: 14.x
+      BRANCH: feature
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.ref }}
+      - name: Install dependencies
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Install Storybook
+        run: npm install @storybook/react -D
+      - name: Build Storybook
+        run: npm run build-storybook
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ env.BRANCH }}
+          folder: storybook
+          cleanup: false
+          single-commit: true
+          commit-message: "Deploy Storybook to ${env.BRANCH}"
+          commit-username: "GitHub Actions"
+          commit-email: "actions@github.com"
+          publish-dir: ./storybook-static
+          cname: example.com
+          custom-domain: example.com
+          allow-empty-commit: true
+          force-orphan: false
+          skip-cleanup: false
+          keep-files: false
+          verbose: true
+          endpoint: https://api.github.com
