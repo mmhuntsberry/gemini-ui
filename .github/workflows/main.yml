@@ -27,7 +27,7 @@ jobs:
         run: npm run build-storybook
       - name: Deploy to GitHub Pages
         if: startsWith(github.ref, 'refs/heads/feature/')
-        uses: JamesIves/github-pages-deploy
+        uses: JamesIves/github-pages-deploy@4.1.1
         with:
           token: ${{ secrets.GEMINI_UI }}
           branch: gh-pages-feature
@@ -48,7 +48,7 @@ jobs:
           endpoint: https://api.github.com
       - name: Deploy to GitHub Pages
         if: startsWith(github.ref, 'refs/heads/stage/')
-        uses: JamesIves/github-pages-deploy
+        uses: JamesIves/github-pages-deploy@4.1.1
         with:
           token: ${{ secrets.GEMINI_UI }}
           branch: gh-pages-stage
@@ -69,7 +69,7 @@ jobs:
           endpoint: https://api.github.com
       - name: Deploy to GitHub Pages
         if: github.ref == 'refs/heads/main'
-        uses: JamesIves/github-pages-deploy
+        uses: JamesIves/github-pages-deploy@4.1.1
         with:
           token: ${{ secrets.GEMINI_UI }}
           branch: gh-pages-main
