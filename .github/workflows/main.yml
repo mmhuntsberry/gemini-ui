@@ -14,21 +14,10 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v2
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: "16.x"
-
-      - name: Install Dependencies
-        run: yarn
-
-      - name: Build Storybook
-        run: yarn run prod:gds-web
-
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3.9.3
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          personal_token: ${{ secrets.GEMINI_UI }}
-          publish_dir: ./packages/gds-web/storybook-static
+          github_token: ${{ secrets.GEMINI_UI }}
+          publish_dir: ./storybook
           cname: ${{ github.repository_owner }}.github.io
-          cname_target: gemini-ui-storybook-${{ github.ref_slug }}.mmhuntsberry.com
+          cname_target: gemini-ui-storybook-${{ github.ref }}
