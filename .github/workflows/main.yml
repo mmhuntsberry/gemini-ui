@@ -3,88 +3,44 @@ name: Deploy Storybook
 on:
   push:
     branches:
+      - feature
+      - stage
       - main
-      - feature/**
-      - stage/**
 
 jobs:
   deploy:
-    runs-on: ubuntu-20.04
-    env:
-      NODE_VERSION: 14.x
+    runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
+      - name: Checkout Repository
         uses: actions/checkout@v2
-        with:
-          ref: ${{ github.ref }}
-      - name: Install dependencies
+
+      - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: ${{ env.NODE_VERSION }}
-      - name: Install Storybook
-        run: npm install @storybook/react -D
+          node-version: 16
+
+      - name: Install Dependencies
+        run: npm ci
+
       - name: Build Storybook
-        run: npm run build-storybook
+        run: |
+          if [[ $GITHUB_REF == "refs/heads/feature" ]]; then
+            npm run prod:gds-react
+          elif [[ $GITHUB_REF == "refs/heads/stage" ]]; then
+            npm run prod:gds-web
+          else
+            npm run prod:gds-react && npm run prod:gds-web
+          fi
+
       - name: Deploy to GitHub Pages
-        if: github.head_ref == 'feature'
-        uses: JamesIves/github-pages-deploy
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          token: ${{ secrets.GEMINI_UI }}
-          branch: gh-pages-feature
-          folder: storybook
-          cleanup: false
-          single-commit: true
-          commit-message: "Deploy Storybook to gh-pages-feature"
-          commit-username: "GitHub Actions"
-          commit-email: "actions@github.com"
-          publish-dir: ./storybook-static
-          cname: example.com
-          custom-domain: example.com
-          allow-empty-commit: true
-          force-orphan: false
-          skip-cleanup: false
-          keep-files: false
-          verbose: true
-          endpoint: https://api.github.com
-      - name: Deploy to GitHub Pages
-        if: github.head_ref == 'stage'
-        uses: JamesIves/github-pages-deploy
-        with:
-          token: ${{ secrets.GEMINI_UI }}
-          branch: gh-pages-stage
-          folder: storybook
-          cleanup: false
-          single-commit: true
-          commit-message: "Deploy Storybook to gh-pages-stage"
-          commit-username: "GitHub Actions"
-          commit-email: "actions@github.com"
-          publish-dir: ./storybook-static
-          cname: example.com
-          custom-domain: example.com
-          allow-empty-commit: true
-          force-orphan: false
-          skip-cleanup: false
-          keep-files: false
-          verbose: true
-          endpoint: https://api.github.com
-      - name: Deploy to GitHub Pages
-        if: github.head_ref == 'main'
-        uses: JamesIves/github-pages-deploy
-        with:
-          token: ${{ secrets.GEMINI_UI }}
-          branch: gh-pages-main
-          folder: storybook
-          cleanup: false
-          single-commit: true
-          commit-message: "Deploy Storybook to gh-pages-main"
-          commit-username: "GitHub Actions"
-          commit-email: "actions@github.com"
-          publish-dir: ./storybook-static
-          cname: example.com
-          custom-domain: example.com
-          allow-empty-commit: true
-          force-orphan: false
-          skip-cleanup: false
-          keep-files: false
-          verbose: true
-          endpoint: https://api.github.com
+          github_token: ${{ secrets.GEMINI_UI }}
+          publish_dir: ./storybook-static
+          cname: ${{ github.ref_name }}-storybook.mmhuntsberry.github.io
+          branch: gh-pages
+          keep_files: true
+          commit_message: "Update Storybook for ${{ github.ref_name }} branch"
+          user_name: "GitHub Actions"
+          user_email: "github-actions@users.noreply.github.com"
