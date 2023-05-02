@@ -1,23 +1,32 @@
-name: Deploy Storybook to GitHub Pages
+name: Deploy Storybook
 
 on:
   push:
-    branches:
-      - feature
-      - stage
-      - main
+    branches-ignore:
+      - "gh-pages"
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout Code
+      - name: Checkout repository
         uses: actions/checkout@v2
+
+      - name: Get branch name
+        id: branch_name
+        run: |
+          BRANCH_NAME=${GITHUB_REF#refs/heads/}
+          echo "Branch name: $BRANCH_NAME"
+          echo "::set-output name=branch::$BRANCH_NAME"
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GEMINI_UI }}
           publish_dir: ./storybook
-          cname: ${{ github.repository_owner }}.github.io
-          cname_target: gemini-ui-storybook-${{ github.ref }}
+          destination_dir: ${{ steps.branch_name.outputs.branch }}
+          keep_files: true
+          user_name: "github-actions"
+          user_email: "github-actions@users.noreply.github.com"
+          branch: gh-pages
