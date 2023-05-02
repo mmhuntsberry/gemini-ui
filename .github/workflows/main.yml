@@ -21,4 +21,3 @@ jobs:
           publish_dir: ./storybook
           cname: ${{ github.repository_owner }}.github.io
           cname_target: gemini-ui-storybook-${{ github.ref }}
-# I forgot how to comment
