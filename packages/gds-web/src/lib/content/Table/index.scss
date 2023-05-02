@@ -1,0 +1,236 @@
+@import "@nielsen-media/gds-core";
+
+.table-title-container {
+  display: grid;
+  grid-template-columns: 1fr min-content;
+  grid-template-rows: 32px;
+  align-items: center;
+  margin: 0;
+  margin-bottom: 16px;
+}
+
+.table-title {
+  margin: 0;
+  white-space: nowrap;
+
+  &[size="tiny"] {
+    @include gds-size-500-semibold;
+  }
+
+  &[size="compact"] {
+    @include gds-size-700-semibold;
+  }
+}
+
+.gds-table {
+  border-collapse: collapse;
+  width: 100%;
+
+  .gds-th {
+    background-color: var(--gds-gray-100);
+    height: 48px; // Default size of header height
+    width: 192px;
+  }
+
+  .gds-thead-inner {
+    height: 100%;
+    width: 100%;
+  }
+
+  .gds-td {
+    padding: 0 var(--gds-space-400);
+
+    &[size="tiny"] {
+      height: var(--gds-space-700);
+      @include gds-size-200-regular;
+
+      &:nth-child(1) {
+        @include gds-size-200-bold;
+      }
+    }
+
+    &[size="compact"] {
+      height: var(--gds-space-800);
+      @include gds-size-200-regular;
+
+      &:nth-child(1) {
+        @include gds-size-200-bold;
+      }
+    }
+
+    &[size="regular"] {
+      height: var(--gds-space-900);
+      @include gds-size-400-regular;
+
+      &:nth-child(1) {
+        @include gds-size-400-bold;
+      }
+    }
+
+    // Align gds-td
+    &[text-alignment="left"] {
+      text-align: left;
+    }
+
+    &[text-alignment="right"] {
+      text-align: right;
+    }
+
+    &[text-alignment="center"] {
+      text-align: center;
+    }
+  }
+
+  &[mode="light"] {
+    .gds-th {
+      border-bottom: 2px solid var(--gds-neutral-200);
+      border-right: 2px solid var(--gds-neutral-200);
+
+      &:last-child {
+        border-right: none;
+      }
+
+      &[background="default"] {
+        background-color: var(--gds-gray-100);
+      }
+
+      &[background="none"] {
+        background-color: var(--gds-white);
+      }
+
+      &[background="blurple"] {
+        background-color: var(--gds-blurple-100);
+      }
+
+      &[background="aqua"] {
+        background-color: var(--gds-aqua-100);
+      }
+
+      &[background="orange"] {
+        background-color: var(--gds-orange-100);
+      }
+    }
+
+    .gds-td {
+      color: var(--gds-black);
+      background-color: var(--gds-white);
+    }
+
+    .gds-tbody {
+      tr {
+        border-bottom: 2px solid var(--gds-neutral-200);
+        &:hover {
+          .gds-td {
+            background-color: var(--gds-gray-100);
+
+            &.selected {
+              background-color: var(--gds-blurple-100);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &[mode="dark"] {
+    .gds-th {
+      border-bottom: 2px solid var(--gds-neutral-800);
+      border-right: 2px solid var(--gds-neutral-800);
+
+      &:last-child {
+        border-right: none;
+      }
+
+      &[background="default"] {
+        background-color: var(--gds-gray-900);
+      }
+
+      &[background="none"] {
+        border-bottom: 2px solid var(--gds-neutral-900);
+        border-right: 2px solid var(--gds-neutral-900);
+        background-color: var(--gds-black);
+      }
+
+      &[background="blurple"] {
+        background-color: var(--gds-blurple-1000);
+      }
+
+      &[background="aqua"] {
+        background-color: var(--gds-aqua-1000);
+      }
+
+      &[background="orange"] {
+        background-color: var(--gds-orange-1000);
+      }
+    }
+
+    .gds-td {
+      color: var(--gds-white);
+      background-color: var(--gds-black);
+      border-bottom: 2px solid #383645;
+    }
+
+    .gds-tbody {
+      tr {
+        &:hover {
+          .gds-td {
+            background-color: var(--gds-gray-900);
+
+            &.selected {
+              background-color: var(--gds-blurple-100);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Sorting Specific Styles
+.gds-th {
+  // cursor: pointer;  // TODO - This should only be toggled if a column is sortable.
+  .gds-column-sort {
+    &[withSortIcon="false"] {
+      grid-template-columns: min-content; // Remove empty space from gtc when no icon is present
+    }
+    position: relative;
+    display: grid; // flexible positioning
+    grid-template-columns: min-content 20px;
+    align-items: end;
+    height: 100%; // take up full width and height of container
+    width: 100%;
+    border: 0; // remove button border
+    background-color: transparent; // Button needs to be transparent to see gds-th bg colors.
+
+    padding: 0 var(--gds-space-400) var(--gds-space-300);
+    // cursor: pointer;  // TODO - This should only be toggled if a column is sortable.
+  }
+
+  &[size="tiny"] {
+    height: 36px; // 36px is a custom size
+
+    //? ALIGN COLUMN HEADERS
+    .gds-column-sort {
+      align-items: center;
+      padding-bottom: 0px;
+
+      // Align Header label and Sorting Icon
+      gds-table-label {
+        padding-top: 6px; // 6px is a custom size
+      }
+    }
+  }
+}
+
+.gds-column-sort {
+  // Text alignment
+  &[text-alignment="left"] {
+    text-align: left;
+  }
+  &[text-alignment="center"] {
+    justify-content: center;
+  }
+  &[text-alignment="right"] {
+    justify-content: end;
+  }
+}

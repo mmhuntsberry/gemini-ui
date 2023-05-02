@@ -1,0 +1,232 @@
+@import "@nielsen-media/gds-core";
+:host {
+  display: inline-flex;
+}
+
+.gds-switch {
+  cursor: pointer;
+
+  &[mode="light"] {
+    --track-inactive: var(--gds-neutral-200);
+    --track-active: var(--gds-primary-500);
+    --track-outline: var(--gds-neutral-800);
+
+    input:checked {
+      --track-outline: var(--gds-primary-800);
+    }
+
+    input:checked + input::before {
+      --track-outline: var(--gds-neutral-800);
+    }
+
+    .label {
+      color: var(--gds-black);
+      white-space: nowrap;
+    }
+
+    .help-text {
+      @include gds-size-200-regular;
+      color: var(--gds-neutral-600);
+    }
+
+    input {
+      cursor: pointer;
+
+      &:focus-visible {
+        outline: 6px solid rgba(#4b31af, 0.24);
+        --track-outline: var(--gds-blurple-600);
+      }
+    }
+  }
+
+  &[mode="dark"] {
+    --track-inactive: var(--gds-black);
+    --track-outline: var(--gds-neutral-700);
+    --track-active: var(--gds-primary-500);
+
+    input:checked {
+      --track-outline: var(--gds-primary-700);
+    }
+
+    input:checked + input::before {
+      --track-outline: var(--gds-primary-700);
+    }
+
+    .label {
+      color: var(--gds-white);
+    }
+
+    .help-text {
+      color: var(--gds-neutral-400);
+    }
+
+    input {
+      cursor: pointer;
+
+      &:focus-visible {
+        outline: 6px solid rgba(#958cf8, 0.32);
+        --track-outline: var(--gds-blurple-600);
+      }
+    }
+  }
+
+  .help-text {
+    display: block;
+  }
+
+  --track-size: calc(var(--thumb-size) * 2);
+  --track-padding: var(--gds-space-100);
+
+  --track-color-inactive: var(--track-inactive);
+  --track-color-active: var(--track-active);
+}
+
+// Thumb Custom Properties
+.gds-switch {
+  &[size="regular"] {
+    --thumb-size: calc(var(--gds-space-600));
+
+    .label {
+      @include gds-size-500-regular;
+    }
+
+    .help-text {
+      @include gds-size-200-regular;
+    }
+  }
+
+  &[size="compact"] {
+    --thumb-size: var(--gds-space-500);
+
+    .label {
+      @include gds-size-300-regular;
+    }
+
+    .help-text {
+      @include gds-size-100-regular;
+    }
+  }
+
+  &[mode="light"] {
+    --thumb: var(--gds-white);
+    --thumb-highlight: var(--gds-white);
+  }
+
+  &[mode="dark"] {
+    // --thumb-size: 16px;
+    --thumb: var(--gds-neutral-200);
+    --thumb-highlight: var(--gds-neutral-200);
+  }
+
+  --thumb-color: var(--thumb);
+  --thumb-color-highlight: var(--thumb-highlight);
+}
+
+.gds-switch {
+  // Switch Layout
+  display: flex;
+  gap: var(--gds-space-300);
+  @include gds-size-300-regular;
+  // justify-content: space-between;
+
+  input {
+    appearance: none;
+    inline-size: calc(var(--track-size));
+    block-size: calc(var(--thumb-size));
+
+    flex-shrink: 0;
+    display: grid;
+    align-items: center;
+    grid: [track] 1fr / [track] 1fr;
+  }
+
+  input::before {
+    content: "";
+    grid-area: track;
+    inline-size: calc(var(--thumb-size) - 4px);
+    block-size: calc(var(--thumb-size) - 4px);
+  }
+}
+
+// Touch interation styles
+.gds-switch {
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.gds-switch > input {
+  appearance: none;
+  border: none;
+  outline-offset: -2px;
+  box-sizing: content-box;
+  box-shadow: var(--track-outline) 0px 1px 0px inset,
+    var(--track-outline) 0px 0px 0px 2px inset;
+
+  background: var(--track-color-inactive);
+  inline-size: var(--track-size);
+  block-size: var(--thumb-size);
+  border-radius: var(--gds-radii-400);
+
+  transition: background-color 0.25s ease-in-out;
+
+  &:hover {
+    background: var(--gds-neutral-400);
+  }
+}
+
+.gds-switch > input:checked {
+  box-shadow: var(--track-outline) 0px 1px 0px inset,
+    var(--track-outline) 0px 0px 0px 2px inset;
+  background: var(--track-color-active);
+
+  transition: background-color 0.25s ease-in-out;
+
+  &:hover {
+    background: var(--gds-primary-700);
+  }
+}
+
+.gds-switch > input::before {
+  background: var(--thumb-color);
+  border-radius: var(--gds-radii-400);
+  box-shadow: var(--track-outline) 0px 1px 0px,
+    var(--track-outline) 0px 0px 0px 2px;
+
+  transition: transform 0.25s ease;
+}
+
+// Thumb position
+.gds-switch > input {
+  --thumb-position: 10%;
+}
+
+.gds-switch > input::before {
+  transform: translateX(var(--thumb-position));
+}
+
+/* positioned at the end of the track: track length - 100% (thumb width) */
+.gds-switch > input:checked {
+  --thumb-position: calc(var(--track-size) - 110%);
+}
+
+.gds-switch[disabled="true"] {
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: 0.32;
+
+  input {
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: 0.32;
+  }
+}
+
+.text-container {
+  margin-top: -2px;
+}
+
+/* positioned in the center of the track: half the track - half the thumb */
+// .gui-switch>input:indeterminate {
+//   --thumb-position: calc((var(--track-size) / 2) - (var(--thumb-size) / 2));
+// }

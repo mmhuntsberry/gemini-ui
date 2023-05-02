@@ -1,0 +1,15 @@
+// Setter helper to generate variables with prefix.
+@mixin cssvars($css_variables, $prefix: $prefix) {
+  :root, :host {
+
+    @each $name,
+    $value in $css_variables {
+      --#{$prefix}-#{$name}: #{$value};
+    }
+  }
+}
+
+// Setter to update a single CSS Custom prop
+@mixin cssvar ($name, $value: '', $prefix: $prefix) {
+  --#{$prefix}-#{$name}: #{$value};
+}

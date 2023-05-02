@@ -1,0 +1,20 @@
+@import "@nielsen-media/gds-core";
+:host {
+  --space-250: 6px;
+  display: inline-block;
+}
+
+.filter-container {
+  display: grid;
+  grid-template-columns: min-content minmax(160px, auto) auto min-content;
+  grid-template-rows: min-content;
+  align-items: center;
+  column-gap: var(--gds-space-400);
+  margin-top: var(--gds-space-300);
+  margin-left: 28px;
+}
+
+gds-input {
+  max-width: 400px;
+  width: 100vw;
+}

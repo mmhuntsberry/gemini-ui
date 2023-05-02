@@ -1,0 +1,191 @@
+@import "@nielsen-media/gds-core";
+:host {
+  --space-250: 6px;
+  display: inline-block;
+  --width: var(--width);
+}
+
+ul {
+  border-radius: var(--gds-space-300);
+  // The width of the menu should be determined
+  // by the width of the button.
+  width: var(--width, var(--gds-layout-200));
+  max-height: var(--gds-layout-200);
+  overflow-x: visible;
+  overflow-y: auto;
+  margin: 0;
+  padding: var(--gds-space-200) 0;
+  z-index: var(--gds-elevation-100);
+
+  &[mode="light"] {
+    background-color: var(--gds-white);
+    border: 2px solid var(--gds-gray-200);
+  }
+
+  &[mode="dark"] {
+    background-color: var(--gds-black);
+    border: 2px solid var(--gds-gray-800);
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: var(--gds-shadow-100);
+  }
+
+  &::-webkit-scrollbar {
+    width: var(--gds-space-400);
+    transform: translateX(2px);
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: var(--gds-neutral-100);
+    border: 2px solid var(--gds-neutral-200);
+    border-right: none;
+    border-radius: var(--gds-radii-400);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border: 2px solid var(--gds-neutral-500);
+    background-color: var(--gds-neutral-300);
+    border-radius: var(--gds-radii-400);
+  }
+}
+
+li[role="menu-item"] {
+  list-style: none;
+  cursor: pointer;
+  overflow: visible;
+
+  button:focus-visible {
+    outline: none;
+  }
+}
+
+.list-controls {
+  display: flex;
+  align-items: center;
+}
+
+.selected-count {
+  @include gds-size-300-semibold;
+  margin: 0;
+  color: var(--gds-neutral-600);
+  text-align: right;
+  flex-grow: 2;
+  margin-right: var(--gds-space-400);
+}
+
+// Base
+button {
+  overflow: inherit;
+  border: 0;
+  background-color: transparent;
+  cursor: inherit;
+  margin: 0 auto;
+  pointer-events: all;
+  text-align: left;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+li[mode="dark"][type="standard"] {
+  background-color: var(--gds-black);
+
+  &[selected="true"] {
+    background-color: var(--gds-blurple-1000);
+  }
+
+  &[divider="true"] {
+    box-shadow: inset 0px -2px 0px #383645;
+  }
+
+  &[selected="false"] {
+    button:hover:enabled {
+      background-color: var(--gds-neutral-100);
+    }
+  }
+
+  &[selected="true"] {
+    button:hover:enabled {
+      background-color: var(--gds-blurple-1000);
+    }
+  }
+
+  button {
+    color: var(--gds-white);
+    transition: 0.25s background-color ease-in-out;
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.32;
+    }
+
+    &:hover:enabled {
+      background-color: var(--gds-neutral-900);
+    }
+  }
+}
+
+// Light mode
+li[mode="light"][type="standard"] {
+  background-color: var(--gds-white);
+
+  &[selected="true"] {
+    background-color: var(--gds-blurple-100);
+  }
+
+  &[selected="true"] {
+    background-color: var(--gds-blurple-100);
+  }
+
+  &[divider="true"] {
+    box-shadow: inset 0px -2px 0px var(--gds-neutral-200);
+  }
+
+  &[selected="false"] {
+    button:hover:enabled {
+      background-color: var(--gds-neutral-100);
+    }
+  }
+
+  &[selected="true"] {
+    button:hover:enabled {
+      background-color: var(--gds-primary-100);
+    }
+  }
+
+  button {
+    color: var(--gds-black);
+    transition: 0.25s background-color ease-in-out;
+
+    &:disabled {
+      opacity: 0.32;
+      cursor: not-allowed;
+    }
+
+    &:hover:enabled {
+      background-color: var(--gds-neutral-100);
+    }
+  }
+}
+
+// Size
+button[size="regular"] {
+  padding: var(--space-250) var(--gds-space-500);
+  @include gds-size-400-regular;
+}
+
+button[size="compact"] {
+  padding: var(--gds-space-200) var(--gds-space-400);
+  @include gds-size-200-regular;
+}
+
+.highlight {
+  background-color: var(--gds-neutral-100);
+}
+
+.focus {
+  outline: none;
+  box-shadow: var(--gds-shadow-100);
+}

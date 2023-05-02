@@ -1,0 +1,148 @@
+@import "@nielsen-media/gds-core";
+
+:host {
+  --color: var(--color);
+
+  li {
+    list-style: none;
+    display: flex;
+    width: min-content;
+    white-space: nowrap;
+    align-items: center;
+
+    ::slotted(*) {
+      margin: 0;
+    }
+
+    ::slotted(gds-icon) {
+      align-items: center;
+    }
+
+    ::slotted(gds-trend) {
+      align-self: center;
+      margin-top: var(--gds-space-600);
+    }
+
+    .icon[name="icon"] {
+      grid-area: icon;
+    }
+
+    .trend[name="trend"] {
+      grid-area: trend;
+    }
+
+    .container {
+      grid-area: text;
+      min-height: min-content;
+    }
+
+    &[alignment="center"] {
+      div {
+        text-align: center;
+      }
+    }
+
+    &[mode="dark"] {
+      .label {
+        color: var(--gds-gray-400);
+        font-weight: 100;
+      }
+
+      .value {
+        color: var(--color, var(--gds-white));
+      }
+    }
+
+    &[mode="dark"] {
+      .label {
+        color: var(--gds-gray-400);
+      }
+
+      .value {
+        color: var(--color, var(--gds-white));
+      }
+    }
+
+    // Typography
+    &[size="giant"] {
+      .label {
+        @include gds-size-300-regular;
+      }
+
+      &[weight="regular"] {
+        .value {
+          @include gds-size-1000-regular;
+        }
+      }
+
+      &[weight="semibold"] {
+        .value {
+          @include gds-size-1000-semibold;
+        }
+      }
+    }
+
+    &[size="jumbo"] {
+      .label {
+        @include gds-size-300-regular;
+      }
+
+      &[weight="regular"] {
+        .value {
+          @include gds-size-900-regular;
+        }
+      }
+
+      &[weight="semibold"] {
+        .value {
+          @include gds-size-900-semibold;
+        }
+      }
+    }
+
+    &[size="regular"] {
+      .label {
+        @include gds-size-200-regular;
+      }
+
+      &[weight="regular"] {
+        .value {
+          @include gds-size-700-regular;
+        }
+      }
+
+      &[weight="semibold"] {
+        .value {
+          @include gds-size-700-semibold;
+        }
+      }
+    }
+
+    &[size="compact"] {
+      .label {
+        @include gds-size-200-regular;
+      }
+
+      &[weight="regular"] {
+        .value {
+          @include gds-size-400-regular;
+        }
+      }
+
+      &[weight="semibold"] {
+        .value {
+          @include gds-size-400-semibold;
+        }
+      }
+    }
+
+    .label {
+      color: var(--gds-gray-600);
+    }
+
+    .value {
+      color: var(--color, var(--gds-black));
+      display: block;
+    }
+  }
+}

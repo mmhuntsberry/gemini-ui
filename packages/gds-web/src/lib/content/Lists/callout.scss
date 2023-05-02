@@ -1,0 +1,17 @@
+@import "@nielsen-media/gds-core";
+
+ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gds-space-800);
+}
+
+ul[direction="horizontal"] {
+}
+
+ul[direction="vertical"] {
+  // gap: var(--gds-space-800);
+  flex-direction: column;
+}

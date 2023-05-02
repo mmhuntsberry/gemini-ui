@@ -1,0 +1,81 @@
+@import "@nielsen-media/gds-core";
+:host {
+  display: inline-block;
+}
+
+.module-wrapper {
+  &[disabled] {
+    opacity: 0.32;
+    pointer-events: none;
+  }
+}
+
+.module-wrapper[mode="light"][type="standard"] {
+  background: var(--gds-secondary-gradient);
+  margin: 2px 0;
+  padding: 2px 2px;
+  border-radius: var(--gds-radii-600);
+}
+
+.module-wrapper[mode="dark"][type="standard"] {
+  background: var(--gds-white);
+  margin: 2px 0;
+  padding: 2px 2px;
+  border-radius: var(--gds-radii-600);
+
+  .module-text {
+    color: var(--gds-white);
+  }
+}
+
+.module-wrapper[mode="light"][type="n1"] {
+  background: var(--gds-primary-gradient-300);
+  margin: 2px 0;
+  padding: 2px 2px;
+  border-radius: var(--gds-radii-600);
+}
+
+.module-wrapper[mode="dark"][type="n1"] {
+  background: var(--gds-primary-gradient-200);
+  margin: 2px 0;
+  padding: 2px 2px;
+  border-radius: var(--gds-radii-600);
+
+  .module-text {
+    background: var(--gds-primary-gradient-200);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+button {
+  --space-250: 6px;
+  --space-350: 10px;
+  --space-550: 18px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: var(--gds-space-200);
+  transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out,
+    color 0.2s ease-in-out;
+  margin: 0;
+
+  &:disabled {
+    cursor: not-allowed;
+    // opacity: 0.32;
+    pointer-events: none;
+  }
+}
+
+// Rounded
+button[rounded="all"] {
+  border-radius: var(--gds-radii-600);
+}
+
+button[size="compact"] {
+  @include gds-size-400-bold;
+  font-size: 18px;
+  padding: var(--space-250) var(--gds-space-500);
+}

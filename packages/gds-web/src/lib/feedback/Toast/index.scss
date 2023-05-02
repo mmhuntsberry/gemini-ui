@@ -1,0 +1,70 @@
+// @import "@nielsen-media/gds-core";;
+
+// span {
+//   font-family: var(--gds-font-family);
+//   display: flex;
+//   align-items: center;
+//   width: min-content;
+//   white-space: nowrap;
+//   gap: var(--gds-space-200);
+
+//   &[size="giant"] {
+//     @include gds-size-600-semibold;
+//   }
+
+//   &[size="jumbo"] {
+//     @include gds-size-400-semibold;
+//   }
+
+//   &[size="regular"] {
+//     @include gds-size-300-semibold;
+//   }
+
+//   &[size="compact"] {
+//     @include gds-size-200-semibold;
+//   }
+
+//   p {
+//     margin: 0;
+//   }
+// }
+
+// span[mode="light"] {
+//   &[trend="up"] {
+//     p {
+//       color: var(--gds-green-700);
+//     }
+//   }
+
+//   &[trend="down"] {
+//     p {
+//       color: var(--gds-red-600);
+//     }
+//   }
+
+//   &[trend="zero"] {
+//     p {
+//       color: var(--gds-gray-700);
+//     }
+//   }
+// }
+
+// span[mode="dark"] {
+//   &[trend="up"] {
+//     p {
+//       color: var(--gds-green-500);
+//     }
+//   }
+
+//   &[trend="down"] {
+//     p {
+//       color: var(--gds-red-400);
+//     }
+//   }
+
+//   &[trend="zero"] {
+//     p {
+//       color: var(--gds-gray-300);
+//     }
+//   }
+// }

@@ -1,0 +1,14 @@
+@import "@nielsen-media/gds-core";
+
+.gds-table-label {
+  text-transform: uppercase;
+  @include gds-size-100-bold;
+
+  &[data-weight="bold"] {
+    font-weight: var(--gds-weight-300);
+  }
+
+  &[data-weight="regular"] {
+    font-weight: var(--gds-weight-100);
+  }
+}

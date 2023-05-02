@@ -1,0 +1,6 @@
+src/
+.*
+*.json
+/*.ts
+*.md
+tsconfig.tsbuildinfo

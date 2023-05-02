@@ -1,0 +1,140 @@
+@import "@nielsen-media/gds-core";
+:host {
+  display: inline-flex;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  font-family: var(--gds-font-family);
+  cursor: pointer;
+  box-sizing: border-box;
+  padding: var(--gds-space-100) var(--gds-space-200);
+}
+
+a[color="primary"] {
+  color: var(--gds-primary-600);
+
+  &[mode="light"] {
+    &[underlined] {
+      padding-bottom: 1px;
+
+      span {
+        border-bottom: 1px solid var(--gds-blurple-600);
+      }
+    }
+
+    &:hover {
+      border-color: var(--gds-blurple-700);
+      color: var(--gds-blurple-700);
+    }
+
+    &:active {
+      border-color: var(--gds-blurple-900);
+      color: var(--gds-blurple-900);
+    }
+
+    &:focus {
+      border-radius: var(--gds-radii-200);
+      outline: 2px solid var(--gds-primary-600);
+      outline-offset: -2px;
+      box-shadow: rgba(#4b31af, 0.24) 0px 0px 0px 4px;
+    }
+  }
+
+  &[mode="dark"] {
+    color: var(--gds-primary-400);
+
+    &[underlined] {
+      padding-bottom: 1px;
+
+      span {
+        border-bottom: 1px solid var(--gds-blurple-400);
+      }
+    }
+
+    &:hover {
+      border-color: var(--gds-blurple-300);
+      color: var(--gds-blurple-300);
+    }
+
+    &:active {
+      border-color: var(--gds-blurple-100);
+      color: var(--gds-blurple-100);
+    }
+
+    &:focus {
+      border-radius: var(--gds-radii-200);
+      outline: 2px solid var(--gds-primary-400);
+      outline-offset: -2px;
+      box-shadow: rgba(#958cf8, 0.32) 0px 0px 0px 4px;
+    }
+  }
+}
+
+a[color="secondary"] {
+  color: var(--gds-black);
+
+  &[mode="light"] {
+    &[underlined] {
+      span {
+        border-bottom: 1px solid var(--gds-black);
+      }
+    }
+
+    &:hover {
+      border-color: var(--gds-blurple-700);
+      color: var(--gds-blurple-700);
+    }
+
+    &:active {
+      border-color: var(--gds-blurple-600);
+      color: var(--gds-blurple-600);
+    }
+
+    &:focus {
+      border-radius: var(--gds-radii-200);
+      outline: 2px solid var(--gds-primary-600);
+      outline-offset: -2px;
+      box-shadow: rgba(#4b31af, 0.24) 0px 0px 0px 4px;
+    }
+  }
+
+  &[mode="dark"] {
+    color: var(--gds-blurple-100);
+
+    &[underlined] {
+      padding-bottom: 1px;
+
+      span {
+        border-bottom: 1px solid var(--gds-blurple-100);
+      }
+    }
+
+    &:hover {
+      border-color: var(--gds-blurple-300);
+      color: var(--gds-blurple-300);
+    }
+
+    &:active {
+      color: var(--gds-primary-400);
+      border-color: var(--gds-blurple-400);
+    }
+
+    &:focus {
+      border-radius: var(--gds-radii-200);
+      outline: 2px solid var(--gds-primary-400);
+      outline-offset: -2px;
+      box-shadow: rgba(#958cf8, 0.32) 0px 0px 0px 4px;
+    }
+  }
+}
+
+a[weight="bold"] {
+  font-weight: var(--gds-weight-300);
+}
+
+a[weight="light"] {
+  // Custom font weight
+  font-weight: 500;
+}

@@ -1,0 +1,39 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "types": ["node"]
+  },
+  "files": [
+    "../../node_modules/@nrwl/react/typings/cssmodule.d.ts",
+    "../../node_modules/@nrwl/react/typings/image.d.ts"
+  ],
+  "exclude": [
+    "jest.config.ts",
+    "**/*.spec.ts",
+    "**/*.test.ts",
+    "**/*.spec.tsx",
+    "**/*.test.tsx",
+    "**/*.spec.js",
+    "**/*.test.js",
+    "**/*.spec.jsx",
+    "**/*.test.jsx",
+    "**/*.stories.ts",
+    "**/*.stories.js",
+    "**/*.stories.jsx",
+    "**/*.stories.tsx"
+  ],
+  "include": [
+    "**/*.tsx",
+    "src/lib/basic-table-6-row-selection.stories",
+    "src/global.d.ts",
+    "src/index.ts",
+    "src/lib/content/Table/basic-table-2-sorting.stories.bak",
+    "src/lib/content/Table/basic-table-1-header.stories.bak",
+    "src/lib/content/Table/basic-table-4-web-components.stories.bak",
+    "src/lib/content/Table/basic-table-3-column-menu.stories.bak",
+    "src/lib/content/Table/basic-table-5-row-selection.stories.bak",
+    "src/lib/content/Table/basic-table-6-adjustment-bar-search.stories.bak",
+    "src/lib/content/Table/table-playground.stories.bak"
+  ]
+}

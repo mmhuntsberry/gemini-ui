@@ -1,0 +1,118 @@
+@import "@nielsen-media/gds-core";
+:host {
+  // display: inline-block;
+  --gds-space-250: 6px;
+}
+
+.gds-label {
+  display: flex;
+  align-items: baseline;
+  flex-direction: column;
+  gap: var(--gds-space-200);
+  @include gds-size-300-regular;
+  white-space: nowrap;
+
+  ::slotted(*) {
+    width: 100%;
+  }
+
+  &[direction="vertical"] {
+    flex-direction: column;
+  }
+
+  &[direction="horizontal"] {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  &[disabled="true"] {
+    .text-container {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+
+  &[required="true"] {
+    .label {
+      display: flex;
+    }
+
+    .label:after {
+      display: inline-block;
+      align-self: center;
+      content: "";
+      -webkit-border-radius: 50%;
+      border-radius: 50%;
+      height: var(--gds-space-300);
+      width: var(--gds-space-300);
+      margin-right: 0.5rem;
+      background-color: var(--gds-orange-600);
+      margin-left: var(--gds-space-200);
+    }
+  }
+
+  // Theme
+  &[mode="light"] {
+    // Fonts
+    &[size="compact"] {
+      color: var(--gds-black);
+      @include gds-size-300-semibold;
+
+      .helper-text {
+        display: block;
+        color: var(--gds-neutral-600);
+        @include gds-size-100-regular;
+      }
+    }
+
+    // Fonts
+    &[size="regular"] {
+      color: var(--gds-black);
+      @include gds-size-500-semibold;
+
+      .helper-text {
+        display: block;
+        color: var(--gds-neutral-600);
+        @include gds-size-200-regular;
+      }
+    }
+
+    &[error="true"] {
+      .helper-text {
+        color: var(--gds-danger-500);
+      }
+    }
+  }
+
+  &[mode="dark"] {
+    // Fonts
+    &[size="compact"] {
+      color: var(--gds-white);
+      @include gds-size-300-regular;
+
+      .helper-text {
+        display: block;
+        color: var(--gds-neutral-400);
+        @include gds-size-100-regular;
+      }
+    }
+
+    // Fonts
+    &[size="regular"] {
+      color: var(--gds-white);
+      @include gds-size-500-regular;
+
+      .helper-text {
+        display: block;
+        color: var(--gds-neutral-400);
+        @include gds-size-200-regular;
+      }
+    }
+
+    &[error="true"] {
+      .helper-text {
+        color: var(--gds-danger-300);
+      }
+    }
+  }
+}

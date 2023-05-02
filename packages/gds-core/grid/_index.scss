@@ -1,0 +1,283 @@
+@import "bootstrap/scss/functions";
+
+$grid-gutter-width: 1rem;
+$gutters: (
+  0: $space-0,
+  1: $space-300,
+  2: $space-500,
+  3: $space-700,
+  4: $space-800,
+  5: $space-1000,
+);
+$container-max-widths: (
+  sm: 480px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px,
+  xxl: 1600px,
+);
+$grid-breakpoints: (
+  xs: 0,
+  sm: 512px,
+  md: 960px,
+  lg: 1280px,
+  xl: 1440px,
+  xxl: 1600px,
+);
+
+// Required Bootstrap imports
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/root";
+
+// Optional components
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/utilities.scss";
+
+// Extend Bootstrap theme colors.  We do this for our color
+// utility classes.
+$theme-colors: (
+  "primary": $primary-500,
+  "secondary": $secondary-500,
+  "success": $success-500,
+  "info": $highlight-500,
+  "warning": $warning-500,
+  "danger": $danger-500,
+  "light": $white,
+  "dark": $black,
+);
+
+$theme-colors: map-merge($theme-colors, $colors);
+
+// Extend bootstrap utilities with our own
+$utilities: map-merge(
+  $utilities,
+  (
+    "margin":
+      map-merge(
+        map-get($utilities, "margin"),
+        (
+          values:
+            map-merge(map-get(map-get($utilities, "margin"), "values"), $space),
+        )
+      ),
+    "margin-top":
+      map-merge(
+        map-get($utilities, "margin-top"),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, "margin-top"), "values"),
+              $space
+            ),
+        )
+      ),
+    "margin-bottom":
+      map-merge(
+        map-get($utilities, "margin-bottom"),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, "margin-bottom"), "values"),
+              $space
+            ),
+        )
+      ),
+    "margin-x":
+      map-merge(
+        map-get($utilities, "margin-x"),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, "margin-x"), "values"),
+              $space
+            ),
+        )
+      ),
+    "margin-y":
+      map-merge(
+        map-get($utilities, "margin-y"),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, "margin-y"), "values"),
+              $space
+            ),
+        )
+      ),
+    "margin-end":
+      map-merge(
+        map-get($utilities, "margin-end"),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, "margin-end"), "values"),
+              $space
+            ),
+        )
+      ),
+    "margin-start":
+      map-merge(
+        map-get($utilities, "margin-start"),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, "margin-start"), "values"),
+              $space
+            ),
+        )
+      ),
+    "padding":
+      map-merge(
+        map-get($utilities, "padding"),
+        (
+          values:
+            map-merge(map-get(map-get($utilities, "padding"), "values"), $space),
+        )
+      ),
+    "padding-top":
+      map-merge(
+        map-get($utilities, "padding-top"),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, "padding-top"), "values"),
+              $space
+            ),
+        )
+      ),
+    "padding-bottom":
+      map-merge(
+        map-get($utilities, "padding-bottom"),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, "padding-bottom"), "values"),
+              $space
+            ),
+        )
+      ),
+    "padding-x":
+      map-merge(
+        map-get($utilities, "padding-x"),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, "padding-x"), "values"),
+              $space
+            ),
+        )
+      ),
+    "padding-y":
+      map-merge(
+        map-get($utilities, "padding-y"),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, "padding-y"), "values"),
+              $space
+            ),
+        )
+      ),
+    "padding-end":
+      map-merge(
+        map-get($utilities, "padding-end"),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, "padding-end"), "values"),
+              $space
+            ),
+        )
+      ),
+    "padding-start":
+      map-merge(
+        map-get($utilities, "padding-start"),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, "padding-start"), "values"),
+              $space
+            ),
+        )
+      ),
+    "gap":
+      map-merge(
+        map-get($utilities, "gap"),
+        (
+          values:
+            map-merge(map-get(map-get($utilities, "gap"), "values"), $space),
+        )
+      ),
+    "background-color":
+      map-merge(
+        map-get($utilities, "background-color"),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, "background-color"), "values"),
+              $theme-colors
+            ),
+        )
+      ),
+    "color":
+      map-merge(
+        map-get($utilities, "color"),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, "color"), "values"),
+              $theme-colors
+            ),
+        )
+      ),
+  )
+);
+
+// Tells bootstrap not to generate utils for the below properties
+$utilities: map-merge(
+  $utilities,
+  (
+    "float": null,
+    "opacity": null,
+    "overflow": null,
+    "shadow": null,
+    "position": null,
+    "top": null,
+    "right": null,
+    "bottom": null,
+    "left": null,
+    "start": null,
+    "end": null,
+    "translate-middle": null,
+    "border": null,
+    "border-top": null,
+    "border-end": null,
+    "border-bottom": null,
+    "border-start": null,
+    "border-color": null,
+    "border-width": null,
+    "border-opacity": null,
+    "negative-margin": null,
+    "negative-margin-x": null,
+    "negative-margin-y": null,
+    "negative-margin-top": null,
+    "negative-margin-bottom": null,
+    "negative-margin-end": null,
+    "negative-margin-start": null,
+    "font-family": null,
+    "font-size": null,
+    "font-weight": null,
+    "font-style": null,
+    "line-height": null,
+    "gradient": null,
+    "rounded": null,
+    "rounded-top": null,
+    "rounded-end": null,
+    "rounded-bottom": null,
+    "rounded-start": null,
+  )
+);
+@import "bootstrap/scss/utilities/api.scss";

@@ -1,0 +1,15 @@
+$elevation: (
+  "elevation-absolute-bottom": -999,
+  "elevation-absolute-top": 999,
+  "elevation-0": 0,
+  "elevation-100": 100,
+  "elevation-150": 150,
+  "elevation-200": 200,
+  "elevation-250": 250,
+  "elevation-300": 300,
+  "elevation-350": 350,
+  "elevation-400": 400,
+  "elevation-450": 450,
+);
+
+@include cssvars($elevation);

@@ -1,0 +1,221 @@
+@import "@nielsen-media/gds-core";
+label {
+  cursor: pointer;
+}
+
+.wrapper {
+  display: inline-flex;
+  width: 100%;
+}
+
+/* Help text */
+legend {
+  @include gds-size-200-regular;
+  color: var(--gds-gray-600);
+}
+
+legend[size="regular"] {
+  margin-left: calc(var(--gds-space-700) + var(--gds-space-200));
+}
+
+legend[size="compact"] {
+  margin-left: calc(var(--gds-space-700));
+}
+
+/*style label for dark mode*/
+.wrapper[mode="dark"] label {
+  color: var(--gds-white);
+}
+
+/*style label to give some more space*/
+.wrapper label::before {
+  cursor: pointer;
+  margin-right: var(--gds-space-300);
+}
+
+/* Text styles */
+.wrapper[size="regular"] {
+  @include gds-size-500-regular;
+}
+
+.wrapper[size="compact"] {
+  @include gds-size-300-regular;
+}
+
+/* Style and hide original checkbox */
+input[type="checkbox"] {
+  height: 1px;
+  width: 1px;
+  cursor: pointer;
+  opacity: 0;
+  position: absolute;
+}
+
+/* Position new box */
+.wrapper input[type="checkbox"] + label::before {
+  content: "";
+  width: 100%;
+  display: inline-block;
+  vertical-align: text-bottom;
+  border-radius: var(--gds-radii-100);
+  border: var(--gds-space-100) solid var(--gds-neutral-800);
+}
+
+.wrapper input[type="checkbox"] + label::before {
+  content: "";
+  width: 100%;
+  display: inline-block;
+  vertical-align: text-bottom;
+  border-radius: var(--gds-radii-100);
+  border: var(--gds-space-100) solid var(--gds-neutral-800);
+}
+
+.wrapper input[type="checkbox"][size="regular"] + label::before {
+  width: var(--gds-space-600);
+  height: var(--gds-space-600);
+}
+
+.wrapper input[type="checkbox"][size="regular"][disabled] + label::before,
+.wrapper input[type="checkbox"][size="compact"][disabled] + label::before,
+.wrapper label[disabled="true"] {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.wrapper input[type="checkbox"][size="compact"] + label::before {
+  width: var(--gds-space-500);
+  height: var(--gds-space-500);
+}
+
+.wrapper input:checked + label::before {
+  background-color: var(--gds-primary-500);
+}
+
+.wrapper input:checked[error="true"] + label::before {
+  background-color: var(--gds-danger-500);
+  border-color: var(--gds-danger-700);
+}
+
+.wrapper input[size="regular"][type="checkbox"]:checked + label::before {
+  content: url("data:image/svg+xml; utf8, <svg width='28' height='28' viewBox='2 2 34 34' xmlns='http://www.w3.org/2000/svg'><path fill='white' d='M18.2356 6.38852L9.41855 15.379L6.26445 12.2364C5.74642 11.7184 4.90654 11.7184 4.38852 12.2364C3.87049 12.7545 3.87049 13.5943 4.38852 14.1124L8.38692 18.1131C8.90494 18.6311 9.74482 18.6311 10.2628 18.1131L20.1115 8.26445C20.6295 7.74642 20.6295 6.90654 20.1115 6.38852C19.5935 5.87049 18.7536 5.87049 18.2356 6.38852Z' /></svg>");
+}
+
+.wrapper input[size="compact"][type="checkbox"]:checked + label::before {
+  content: url("data:image/svg+xml; utf8, <svg width='24' height='24' viewBox='4 4 34 34' xmlns='http://www.w3.org/2000/svg'><path fill='white' d='M18.2356 6.38852L9.41855 15.379L6.26445 12.2364C5.74642 11.7184 4.90654 11.7184 4.38852 12.2364C3.87049 12.7545 3.87049 13.5943 4.38852 14.1124L8.38692 18.1131C8.90494 18.6311 9.74482 18.6311 10.2628 18.1131L20.1115 8.26445C20.6295 7.74642 20.6295 6.90654 20.1115 6.38852C19.5935 5.87049 18.7536 5.87049 18.2356 6.38852Z' /></svg>");
+}
+
+/* indeterminate styles */
+.wrapper
+  input[size="regular"][type="checkbox"][indeterminate="true"]:checked
+  + label::before {
+  content: url("data:image/svg+xml; utf8, <svg width='26' height='26' viewBox='2 2 32 32' xmlns='http://www.w3.org/2000/svg'> <path fill='white' d='M5 12C5 11.1716 5.58763 10.5 6.3125 10.5H17.6875C18.4124 10.5 19 11.1716 19 12C19 12.8284 18.4124 13.5 17.6875 13.5H6.3125C5.58763 13.5 5 12.8284 5 12Z' /></svg>");
+}
+
+.wrapper
+  input[size="compact"][type="checkbox"][indeterminate="true"]:checked
+  + label::before {
+  content: url("data:image/svg+xml; utf8, <svg width='22' height='22' viewBox='3 3 34 34' xmlns='http://www.w3.org/2000/svg'> <path fill='white' d='M5 12C5 11.1716 5.58763 10.5 6.3125 10.5H17.6875C18.4124 10.5 19 11.1716 19 12C19 12.8284 18.4124 13.5 17.6875 13.5H6.3125C5.58763 13.5 5 12.8284 5 12Z' /></svg>");
+}
+
+/*svg background styles*/
+.wrapper input[type="checkbox"]:checked + label::after {
+  opacity: 0;
+  position: absolute;
+  transition: opacity 0.2s ease-in-out;
+}
+
+/* reveal check for 'on' state */
+.wrapper input:checked + label::after {
+  opacity: 1;
+}
+
+/* Hover styles */
+label:hover::before {
+  background: var(--gds-neutral-200);
+}
+
+.wrapper[mode="dark"] input:not(:checked) + label:hover::before {
+  background: var(--gds-neutral-800);
+}
+
+.wrapper[mode="dark"]
+  input[size="compact"][type="checkbox"]:not(:checked)
+  + label:hover::before {
+  box-shadow: var(--gds-black) 0px 0px 0px 3px inset;
+}
+
+.wrapper[mode="dark"]
+  input[size="regular"][type="checkbox"]:not(:checked)
+  + label:hover::before {
+  box-shadow: var(--gds-black) 0px 0px 0px 4px inset;
+}
+
+input[size="compact"][type="checkbox"]:not(:checked) + label:hover::before {
+  box-shadow: var(--gds-white) 0px 0px 0px 3px inset;
+}
+
+input[size="compact"][type="checkbox"]:not(:checked):focus-visible
+  + label:hover::before {
+  box-shadow: 0px 0px 0px 4px rgba(75, 49, 175, 0.24),
+    var(--gds-white) 0px 0px 0px 3px inset;
+}
+
+input[type="checkbox"]:not(:checked):focus-visible + label:hover::before {
+  box-shadow: 0px 0px 0px 4px rgba(75, 49, 175, 0.24),
+    var(--gds-white) 0px 0px 0px var(--gds-space-200) inset;
+}
+
+/* error focus states */
+// .wrapper[mode="dark"] input[size="compact"][type="checkbox"][error="true"]:not(:checked):focus-visible+label:hover::before {
+//   box-shadow: 0px 0px 0px 4px rgba(75, 49, 175, 0.24), var(--gds-white) 0px 0px 0px 3px inset;
+// }
+
+// input[type="checkbox"]:not(:checked):focus-visible+label:hover::before {
+//   box-shadow: 0px 0px 0px 4px rgba(75, 49, 175, 0.24), var(--gds-white) 0px 0px 0px var(--gds-space-200) inset;
+// }
+
+input[type="checkbox"]:not(:checked) + label:hover::before {
+  box-shadow: var(--gds-white) 0px 0px 0px var(--gds-space-200) inset;
+}
+
+/* Focus styles */
+.wrapper input:focus + label::before {
+  box-shadow: none;
+  outline: none;
+}
+
+.wrapper input:focus-visible + label::before {
+  box-shadow: 0px 0px 0px 4px rgba(75, 49, 175, 0.24);
+  outline: var(--gds-space-200) solid transparent;
+}
+
+.wrapper[mode="dark"] input:focus-visible + label::before {
+  box-shadow: 0px 0px 0px 4px rgba(149, 140, 248, 0.32);
+  border: 2px solid var(--gds-primary-400);
+  outline: var(--gds-space-200) solid transparent;
+}
+
+.wrapper[mode="dark"] input[error="true"]:focus-visible + label::before {
+  box-shadow: 0px 0px 0px 4px rgba(230, 59, 49, 0.36);
+  border: 2px solid var(--gds-danger-700);
+  background: var(--gds-danger-500);
+  outline: var(--gds-space-200) solid transparent;
+}
+
+.wrapper[mode="light"] input[error="true"]:focus-visible + label::before {
+  box-shadow: 0px 0px 0px 4px rgba(230, 59, 49, 0.36);
+  border: 2px solid var(--gds-danger-700);
+  background: var(--gds-danger-500);
+  outline: var(--gds-space-200) solid transparent;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  padding-left: 28px;
+  padding-top: 4px;
+}

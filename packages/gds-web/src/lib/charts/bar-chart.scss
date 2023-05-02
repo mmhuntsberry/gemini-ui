@@ -1,0 +1,41 @@
+@import "@nielsen-media/gds-core";
+
+rect {
+  fill: var(--gds-reporting-blurple-700);
+  transition: opacity 0.2s ease-in-out;
+}
+
+// Fades all rects on hover
+.bounds:hover rect {
+  opacity: 0.7;
+}
+
+// Do not fade currently hovered rect
+.bounds:hover rect:hover {
+  opacity: 1;
+}
+
+text {
+  @include gds-size-0-regular;
+  color: var(--gds-neutral-600);
+}
+
+.chart-title {
+  @include gds-size-500-bold;
+  fill: var(--gds-black);
+  margin-bottom: var(--gds-space-400);
+}
+
+.axis-label {
+  @include gds-size-100-semibold;
+  fill: var(--gds-neutral-700);
+}
+
+.axis-line {
+  stroke: var(--gds-neutral-400);
+}
+
+.grid line {
+  stroke: var(--gds-neutral-200);
+  stroke-dasharray: 3;
+}

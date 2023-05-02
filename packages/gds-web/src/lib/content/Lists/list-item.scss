@@ -1,0 +1,146 @@
+@import "@nielsen-media/gds-core";
+:host {
+  --color: var(--color);
+  --weight: var(--weight);
+  display: block;
+}
+
+li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  width: min-content;
+  white-space: nowrap;
+
+  ::slotted(*) {
+    margin: 0;
+  }
+
+  .body {
+    display: block;
+    color: var(--color, var(--gds-black));
+  }
+
+  &[direction="vertical"] {
+    gap: var(--gds-space-300);
+    padding-bottom: var(--gds-space-400);
+  }
+
+  &[direction="vertical"][size="tiny"] {
+    gap: var(--gds-space-200);
+    padding-bottom: var(--gds-space-300);
+  }
+
+  &[direction="horizontal"],
+  &[direction="horizontal-fixed"] {
+    gap: var(--gds-space-200);
+    padding-bottom: var(--gds-space-300);
+  }
+
+  &[direction="horizontal-fixed"] {
+    div {
+      .heading {
+        @include gds-size-700-bold;
+        width: 176px;
+      }
+    }
+  }
+
+  &[direction="horizontal"][size="tiny"] {
+    padding-bottom: var(--gds-space-200);
+  }
+
+  &[divider="true"] {
+    box-shadow: 0 4px 0px -2px var(--gds-neutral-200);
+  }
+
+  &[mode="dark"] {
+    --color: var(--color);
+    color: var(--color, var(--gds-white));
+
+    &[divider="true"] {
+      box-shadow: 0 4px 0px -2px var(--gds-neutral-800);
+    }
+  }
+
+  &[size="jumbo"] {
+    .heading {
+      @include gds-size-700-bold;
+    }
+
+    .body {
+      @include gds-size-700-regular;
+
+      &[weight="regular"] {
+        font-weight: var(--gds-weight-100);
+      }
+      &[weight="semibold"] {
+        font-weight: var(--gds-weight-200);
+      }
+    }
+  }
+
+  &[size="regular"] {
+    .heading {
+      @include gds-size-500-bold;
+    }
+
+    .body {
+      @include gds-size-500-regular;
+
+      &[weight="regular"] {
+        font-weight: var(--gds-weight-100);
+      }
+      &[weight="semibold"] {
+        font-weight: var(--gds-weight-200);
+      }
+    }
+  }
+
+  &[size="compact"] {
+    .heading {
+      @include gds-size-300-bold;
+    }
+
+    .body {
+      @include gds-size-300-regular;
+
+      &[weight="regular"] {
+        font-weight: var(--gds-weight-100);
+      }
+      &[weight="semibold"] {
+        font-weight: var(--gds-weight-200);
+      }
+    }
+  }
+
+  &[size="tiny"] {
+    align-items: center;
+    .heading {
+      @include gds-size-100-bold;
+    }
+
+    .body {
+      @include gds-size-100-regular;
+
+      &[weight="regular"] {
+        font-weight: var(--gds-weight-100);
+      }
+      &[weight="semibold"] {
+        font-weight: var(--gds-weight-200);
+      }
+    }
+  }
+
+  // Direction = Horizontal
+  div[direction="horizontal"] {
+    display: flex;
+    gap: var(--gds-space-300);
+  }
+
+  div[direction="horizontal-fixed"] {
+    display: grid;
+    // TODO: Get min-width from Brad
+    grid-template-columns: 176px 1fr;
+  }
+}

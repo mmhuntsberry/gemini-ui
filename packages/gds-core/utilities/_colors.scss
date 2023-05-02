@@ -1,0 +1,35 @@
+$utilities: (
+  "color": (
+    "prefix": "#{$prefix}-text-color",
+    "values": $colors,
+  ),
+  "background-color": (
+    "prefix": "#{$prefix}-bg-color",
+    "values": $colors,
+  ),
+  "border-color": (
+    "prefix": "#{$prefix}-border-color",
+    "values": $colors,
+  ),
+);
+
+// @each $property,
+// $map in $utilities {
+//   $p: map-get($map, "prefix");
+//   $values: map-get($map, "values");
+
+//   @each $k,
+//   $v in $values {
+//     @if($k =="default") {
+//       .#{$p} {
+//         #{$property}: $v;
+//       }
+//     }
+
+//     @else {
+//       .#{$p}-#{$k} {
+//         #{$property}: $v;
+//       }
+//     }
+//   }
+// }

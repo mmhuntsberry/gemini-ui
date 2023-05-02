@@ -1,0 +1,125 @@
+@import "@nielsen-media/gds-core";
+button[mode="dark"],
+button[background="solid"][color="danger"][mode="dark"],
+button[background="outlined"][color="secondary"][mode="dark"] {
+  background-color: var(--gds-black);
+}
+
+// Primary styles
+button[mode="dark"][color="primary"] {
+  box-shadow: var(--gds-primary-400) 0px 0px 0px 2px inset;
+  color: var(--gds-primary-400);
+
+  &:hover:enabled {
+    background-color: var(--gds-primary-900);
+    box-shadow: var(--gds-primary-400) 0px 0px 0px 2px inset;
+  }
+
+  &:focus-visible {
+    outline: 6px solid rgba(#6346fe, 0.16);
+    box-shadow: var(--gds-primary-400) 0px 0px 0px 2px inset;
+  }
+
+  &:hover:active:enabled {
+    outline: 6px solid rgba(#6346fe, 0.16);
+  }
+}
+
+// Secondary styles
+button[mode="dark"][color="secondary"] {
+  box-shadow: var(--gds-neutral-200) 0px 0px 0px var(--gds-space-100) inset;
+  background-color: var(--gds-neutral-200);
+  color: var(--gds-black);
+
+  &:hover:enabled {
+    background-color: var(--gds-neutral-900);
+    box-shadow: var(--gds-neutral-200) 0px 0px 0px 2px inset;
+  }
+
+  &:focus-visible {
+    outline: 6px solid rgba(#787d91, 0.32);
+    box-shadow: var(--gds-neutral-200) 0px 0px 0px 2px inset;
+  }
+
+  &:hover:active:enabled {
+    outline: 6px solid rgba(#787d91, 0.32);
+  }
+}
+
+button[background="solid"][color="secondary"][mode="dark"] {
+  &:hover:enabled {
+    background-color: var(--gds-neutral-400);
+    box-shadow: var(--gds-neutral-400) 0px 0px 0px 2px inset;
+  }
+}
+
+button[background="outlined"][color="secondary"][mode="dark"],
+button[background="transparent"][color="secondary"][mode="dark"] {
+  color: var(--gds-neutral-200);
+}
+
+// Tertiary Styles
+button[color="tertiary"][mode="dark"] {
+  box-shadow: var(--gds-neutral-200) 0px 0px 0px var(--gds-space-100) inset;
+
+  &:hover:enabled {
+    background-color: var(--gds-neutral-200);
+    box-shadow: var(--gds-neutral-300) 0px 0px 0px 2px inset;
+  }
+
+  &:focus-visible {
+    outline: 6px solid rgba(#787d91, 0.16);
+    box-shadow: var(--gds-neutral-300) 0px 0px 0px 2px inset;
+  }
+
+  &:hover:active:enabled {
+    outline: 6px solid rgba(#787d91, 0.16);
+  }
+}
+
+button[background="solid"][color="tertiary"][mode="dark"] {
+  background-color: var(--gds-neutral-900);
+  box-shadow: var(--gds-neutral-800) 0px 0px 0px 2px inset;
+
+  &:hover:enabled {
+    background-color: var(--gds-neutral-800);
+    box-shadow: var(--gds-neutral-700) 0px 0px 0px 2px inset;
+  }
+}
+
+// Danger styles
+button[color="danger"][mode="dark"] {
+  box-shadow: var(--gds-danger-400) 0px 0px 0px var(--gds-space-100) inset;
+  color: var(--gds-danger-400);
+
+  &:hover:enabled {
+    background-color: var(--gds-danger-1000);
+    box-shadow: var(--gds-danger-400) 0px 0px 0px 2px inset;
+  }
+
+  &:focus-visible {
+    outline: 6px solid rgba(230, 59, 49, 0.16);
+  }
+
+  &:hover:active:enabled {
+    outline: 6px solid rgba(230, 59, 49, 0.16);
+  }
+}
+
+button[color="transparent"][mode="dark"] {
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+
+  &:hover:enabled {
+    background-color: var(--gds-neutral-900);
+    box-shadow: none;
+  }
+
+  &:focus-visible,
+  &:hover:active:enabled {
+    background-color: var(--gds-neutral-800);
+    outline: 0;
+    box-shadow: none;
+  }
+}

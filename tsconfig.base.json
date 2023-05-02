@@ -1,0 +1,27 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": true,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "types": ["vite/client"],
+    "paths": {
+      "@nielsen-media/gds-core": ["packages/gds-core/src/index.scss"],
+      "@nielsen-media/gds-react": ["packages/gds-react/src/index.ts"],
+      "@nielsen-media/gds-types": ["packages/gds-types/index.ts"],
+      "@nielsen-media/gds-utilities": ["packages/gds-utilities/src/index.ts"],
+      "@nielsen-media/gds-web": ["packages/gds-web/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

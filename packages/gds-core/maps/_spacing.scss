@@ -1,0 +1,43 @@
+$space: (
+  "space-0": $space-0,
+  "space-100": $space-100,
+  "space-200": $space-200,
+  "space-300": $space-300,
+  "space-400": $space-400,
+  "space-500": $space-500,
+  "space-600": $space-600,
+  "space-700": $space-700,
+  "space-800": $space-800,
+  "space-900": $space-900,
+  "space-1000": $space-1000,
+
+  // layout
+  "layout-0": $layout-0,
+  "layout-100": $layout-100,
+  "layout-200": $layout-200,
+  "layout-300": $layout-300,
+  "layout-400": $layout-400,
+  "layout-500": $layout-500,
+  "layout-600": $layout-600,
+  "layout-700": $layout-700,
+  "layout-800": $layout-800,
+  "layout-900": $layout-900,
+  "layout-1000": $layout-1000,
+);
+
+$spacing-level-values: (
+  0: 0,
+  100: $space-100,
+  200: $space-100 * 2,
+  300: $space-100 * 4,
+  400: $space-100 * 6,
+  500: $space-100 * 8,
+  600: $space-100 * 10,
+  700: $space-100 * 14,
+  800: $space-100 * 16,
+  900: $space-100 * 24,
+  1000: $space-100 * 32,
+  "auto": "auto"
+);
+
+@include cssvars($space);

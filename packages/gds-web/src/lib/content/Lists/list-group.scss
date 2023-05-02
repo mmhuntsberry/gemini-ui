@@ -1,0 +1,54 @@
+@import "@nielsen-media/gds-core";
+ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+
+  &[size="giant"] {
+    gap: var(--gds-space-900);
+  }
+
+  &[size="jumbo"] {
+    gap: var(--gds-space-900);
+  }
+
+  &[size="regular"] {
+    gap: var(--gds-space-800);
+  }
+
+  &[size="compact"] {
+    gap: var(--gds-space-700);
+  }
+
+  &[size="tiny"] {
+    gap: var(--gds-space-700);
+  }
+
+  ::slotted([size="giant"]) {
+    @include gds-size-1000-semibold;
+  }
+
+  ::slotted([size="jumbo"]) {
+    @include gds-size-900-semibold;
+  }
+
+  ::slotted([size="regular"]) {
+    @include gds-size-700-semibold;
+  }
+
+  ::slotted([size="compact"]) {
+    @include gds-size-400-semibold;
+  }
+
+  ::slotted([weight="regular"]) {
+    font-weight: var(--gds-weight-100);
+  }
+  ::slotted([weight="bold"]) {
+    font-weight: var(--gds-weight-200);
+  }
+}
+
+ul[mode="dark"] {
+  color: var(--gds-white);
+}

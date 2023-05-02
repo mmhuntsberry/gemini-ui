@@ -1,0 +1,80 @@
+@import "@nielsen-media/gds-core";
+
+:host[width="auto"] {
+  display: inline-block;
+}
+
+:host[width="full"] {
+  display: block;
+}
+
+button {
+  --space-250: 6px;
+  --space-350: 10px;
+  --space-550: 18px;
+  background-color: transparent;
+  border: none;
+  color: var(--gds-white);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: var(--gds-space-200);
+  transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out,
+    color 0.2s ease-in-out;
+  margin: 0;
+
+  ::slotted(span.application-module-text) {
+    white-space: nowrap;
+    background: var(--gds-thedarkroom);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.32;
+    pointer-events: none;
+  }
+}
+
+button[width="full"] {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+// Rounded
+button[rounded="all"] {
+  border-radius: var(--gds-radii-600);
+}
+
+button[rounded="left"] {
+  border-bottom-left-radius: var(--gds-radii-600);
+  border-top-left-radius: var(--gds-radii-600);
+}
+
+button[rounded="right"] {
+  border-bottom-right-radius: var(--gds-radii-600);
+  border-top-right-radius: var(--gds-radii-600);
+}
+
+// Sizes
+button[size="jumbo"] {
+  @include gds-size-700-bold;
+  padding: var(--space-550) var(--gds-space-700);
+}
+
+button[size="regular"] {
+  @include gds-size-600-bold;
+  padding: var(--space-350) var(--gds-space-600);
+}
+
+button[size="compact"] {
+  @include gds-size-400-bold;
+  padding: var(--space-250) var(--gds-space-500);
+}
+
+button[size="tiny"] {
+  @include gds-size-300-bold;
+  padding: var(--gds-space-100) var(--gds-space-400);
+}

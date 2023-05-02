@@ -1,0 +1,734 @@
+* {
+  font-family: var(--#{$prefix}-font-family);
+  font-variant-numeric: slashed-zero tabular-nums ordinal;
+  font-feature-settings: "ss01";
+}
+
+@mixin gds-size-0-regular {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-0);
+  letter-spacing: var(--#{$prefix}-ls-0);
+  line-height: var(--#{$prefix}-lh-100);
+  font-weight: var(--#{$prefix}-weight-100);
+}
+
+@mixin gds-size-100-regular {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-100);
+  letter-spacing: var(--#{$prefix}-ls-100);
+  line-height: var(--#{$prefix}-lh-200);
+  font-weight: var(--#{$prefix}-weight-100);
+}
+
+@mixin gds-size-200-regular {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-200);
+  letter-spacing: var(--#{$prefix}-ls-200);
+  line-height: var(--#{$prefix}-lh-300);
+  font-weight: var(--#{$prefix}-weight-100);
+}
+
+@mixin gds-size-300-regular {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-300);
+  letter-spacing: var(--#{$prefix}-ls-300);
+  line-height: var(--#{$prefix}-lh-300);
+  font-weight: var(--#{$prefix}-weight-100);
+}
+
+@mixin gds-size-400-regular {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-400);
+  letter-spacing: var(--#{$prefix}-ls-400);
+  line-height: var(--#{$prefix}-lh-300);
+  font-weight: var(--#{$prefix}-weight-100);
+}
+
+@mixin gds-size-500-regular {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-500);
+  letter-spacing: var(--#{$prefix}-ls-500);
+  line-height: var(--#{$prefix}-lh-400);
+  font-weight: var(--#{$prefix}-weight-100);
+}
+
+@mixin gds-size-600-regular {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-600);
+  letter-spacing: var(--#{$prefix}-ls-600);
+  line-height: var(--#{$prefix}-lh-500);
+  font-weight: var(--#{$prefix}-weight-100);
+}
+
+@mixin gds-size-700-regular {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-700);
+  letter-spacing: var(--#{$prefix}-ls-700);
+  line-height: var(--#{$prefix}-lh-500);
+  font-weight: var(--#{$prefix}-weight-100);
+}
+
+@mixin gds-size-800-regular {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-800);
+  letter-spacing: var(--#{$prefix}-ls-800);
+  line-height: var(--#{$prefix}-lh-600);
+  font-weight: var(--#{$prefix}-weight-100);
+}
+
+@mixin gds-size-900-regular {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-900);
+  letter-spacing: var(--#{$prefix}-ls-900);
+  line-height: var(--#{$prefix}-lh-700);
+  font-weight: var(--#{$prefix}-weight-100);
+}
+
+@mixin gds-size-1000-regular {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-1000);
+  letter-spacing: var(--#{$prefix}-ls-1000);
+  line-height: var(--#{$prefix}-lh-800);
+  font-weight: var(--#{$prefix}-weight-100);
+}
+
+@mixin gds-size-0-semibold {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-0);
+  letter-spacing: var(--#{$prefix}-ls-0);
+  line-height: var(--#{$prefix}-lh-100);
+  font-weight: var(--#{$prefix}-weight-200);
+}
+
+@mixin gds-size-100-semibold {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-100);
+  letter-spacing: var(--#{$prefix}-ls-100);
+  line-height: var(--#{$prefix}-lh-200);
+  font-weight: var(--#{$prefix}-weight-200);
+}
+
+@mixin gds-size-200-semibold {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-200);
+  letter-spacing: var(--#{$prefix}-ls-200);
+  line-height: var(--#{$prefix}-lh-300);
+  font-weight: var(--#{$prefix}-weight-200);
+}
+
+@mixin gds-size-300-semibold {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-300);
+  letter-spacing: var(--#{$prefix}-ls-300);
+  line-height: var(--#{$prefix}-lh-300);
+  font-weight: var(--#{$prefix}-weight-200);
+}
+
+@mixin gds-size-400-semibold {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-400);
+  letter-spacing: var(--#{$prefix}-ls-400);
+  line-height: var(--#{$prefix}-lh-300);
+  font-weight: var(--#{$prefix}-weight-200);
+}
+
+@mixin gds-size-500-semibold {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-500);
+  letter-spacing: var(--#{$prefix}-ls-500);
+  line-height: var(--#{$prefix}-lh-400);
+  font-weight: var(--#{$prefix}-weight-200);
+}
+
+@mixin gds-size-600-semibold {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-600);
+  letter-spacing: var(--#{$prefix}-ls-600);
+  line-height: var(--#{$prefix}-lh-500);
+  font-weight: var(--#{$prefix}-weight-200);
+}
+
+@mixin gds-size-700-semibold {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-700);
+  letter-spacing: var(--#{$prefix}-ls-700);
+  line-height: var(--#{$prefix}-lh-500);
+  font-weight: var(--#{$prefix}-weight-200);
+}
+
+@mixin gds-size-800-semibold {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-800);
+  letter-spacing: var(--#{$prefix}-ls-800);
+  line-height: var(--#{$prefix}-lh-600);
+  font-weight: var(--#{$prefix}-weight-200);
+}
+
+@mixin gds-size-900-semibold {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-900);
+  letter-spacing: var(--#{$prefix}-ls-900);
+  line-height: var(--#{$prefix}-lh-700);
+  font-weight: var(--#{$prefix}-weight-200);
+}
+
+@mixin gds-size-1000-semibold {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-1000);
+  letter-spacing: var(--#{$prefix}-ls-1000);
+  line-height: var(--#{$prefix}-lh-800);
+  font-weight: var(--#{$prefix}-weight-200);
+}
+
+@mixin gds-size-0-bold {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-0);
+  letter-spacing: var(--#{$prefix}-ls-0);
+  line-height: var(--#{$prefix}-lh-100);
+  font-weight: var(--#{$prefix}-weight-300);
+}
+
+@mixin gds-size-100-bold {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-100);
+  letter-spacing: var(--#{$prefix}-ls-100);
+  line-height: var(--#{$prefix}-lh-200);
+  font-weight: var(--#{$prefix}-weight-300);
+}
+
+@mixin gds-size-200-bold {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-200);
+  letter-spacing: var(--#{$prefix}-ls-200);
+  line-height: var(--#{$prefix}-lh-300);
+  font-weight: var(--#{$prefix}-weight-300);
+}
+
+@mixin gds-size-300-bold {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-300);
+  letter-spacing: var(--#{$prefix}-ls-300);
+  line-height: var(--#{$prefix}-lh-300);
+  font-weight: var(--#{$prefix}-weight-300);
+}
+
+@mixin gds-size-400-bold {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-400);
+  letter-spacing: var(--#{$prefix}-ls-400);
+  line-height: var(--#{$prefix}-lh-300);
+  font-weight: var(--#{$prefix}-weight-300);
+}
+
+@mixin gds-size-500-bold {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-500);
+  letter-spacing: var(--#{$prefix}-ls-500);
+  line-height: var(--#{$prefix}-lh-400);
+  font-weight: var(--#{$prefix}-weight-300);
+}
+
+@mixin gds-size-600-bold {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-600);
+  letter-spacing: var(--#{$prefix}-ls-600);
+  line-height: var(--#{$prefix}-lh-500);
+  font-weight: var(--#{$prefix}-weight-300);
+}
+
+@mixin gds-size-700-bold {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-700);
+  letter-spacing: var(--#{$prefix}-ls-700);
+  line-height: var(--#{$prefix}-lh-500);
+  font-weight: var(--#{$prefix}-weight-300);
+}
+
+@mixin gds-size-800-bold {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-800);
+  letter-spacing: var(--#{$prefix}-ls-800);
+  line-height: var(--#{$prefix}-lh-600);
+  font-weight: var(--#{$prefix}-weight-300);
+}
+
+@mixin gds-size-900-bold {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-900);
+  letter-spacing: var(--#{$prefix}-ls-900);
+  line-height: var(--#{$prefix}-lh-700);
+  font-weight: var(--#{$prefix}-weight-300);
+}
+
+@mixin gds-size-1000-bold {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-1000);
+  letter-spacing: var(--#{$prefix}-ls-1000);
+  line-height: var(--#{$prefix}-lh-800);
+  font-weight: var(--#{$prefix}-weight-300);
+}
+
+.gds-size-0,
+.gds-size-0-regular {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-0);
+  letter-spacing: var(--#{$prefix}-ls-0);
+  line-height: var(--#{$prefix}-lh-100);
+  font-weight: var(--#{$prefix}-weight-100);
+}
+
+.gds-size-100,
+.gds-size-100-regular {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-100);
+  letter-spacing: var(--#{$prefix}-ls-100);
+  line-height: var(--#{$prefix}-lh-200);
+  font-weight: var(--#{$prefix}-weight-100);
+}
+
+.gds-size-200,
+.gds-size-200-regular {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-200);
+  letter-spacing: var(--#{$prefix}-ls-200);
+  line-height: var(--#{$prefix}-lh-300);
+  font-weight: var(--#{$prefix}-weight-100);
+}
+
+.gds-size-300,
+.gds-size-300-regular {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-300);
+  letter-spacing: var(--#{$prefix}-ls-300);
+  line-height: var(--#{$prefix}-lh-300);
+  font-weight: var(--#{$prefix}-weight-100);
+}
+
+.gds-size-400,
+.gds-size-400-regular {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-400);
+  letter-spacing: var(--#{$prefix}-ls-400);
+  line-height: var(--#{$prefix}-lh-300);
+  font-weight: var(--#{$prefix}-weight-100);
+}
+
+.gds-size-500,
+.gds-size-500-regular {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-500);
+  letter-spacing: var(--#{$prefix}-ls-500);
+  line-height: var(--#{$prefix}-lh-400);
+  font-weight: var(--#{$prefix}-weight-100);
+}
+
+.gds-size-600,
+.gds-size-600-regular {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-600);
+  letter-spacing: var(--#{$prefix}-ls-600);
+  line-height: var(--#{$prefix}-lh-500);
+  font-weight: var(--#{$prefix}-weight-100);
+}
+
+.gds-size-700,
+.gds-size-700-regular {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-700);
+  letter-spacing: var(--#{$prefix}-ls-700);
+  line-height: var(--#{$prefix}-lh-500);
+  font-weight: var(--#{$prefix}-weight-100);
+}
+
+.gds-size-800,
+.gds-size-800-regular {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-800);
+  letter-spacing: var(--#{$prefix}-ls-800);
+  line-height: var(--#{$prefix}-lh-600);
+  font-weight: var(--#{$prefix}-weight-100);
+}
+
+.gds-size-900,
+.gds-size-900-regular {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-900);
+  letter-spacing: var(--#{$prefix}-ls-900);
+  line-height: var(--#{$prefix}-lh-700);
+  font-weight: var(--#{$prefix}-weight-100);
+}
+
+.gds-size-1000,
+.gds-size-1000-regular {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-1000);
+  letter-spacing: var(--#{$prefix}-ls-1000);
+  line-height: var(--#{$prefix}-lh-800);
+  font-weight: var(--#{$prefix}-weight-100);
+}
+
+.gds-size-0-semibold {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-0);
+  letter-spacing: var(--#{$prefix}-ls-0);
+  line-height: var(--#{$prefix}-lh-100);
+  font-weight: var(--#{$prefix}-weight-200);
+}
+
+.gds-size-100-semibold {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-100);
+  letter-spacing: var(--#{$prefix}-ls-100);
+  line-height: var(--#{$prefix}-lh-200);
+  font-weight: var(--#{$prefix}-weight-200);
+}
+
+.gds-size-200-semibold {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-200);
+  letter-spacing: var(--#{$prefix}-ls-200);
+  line-height: var(--#{$prefix}-lh-300);
+  font-weight: var(--#{$prefix}-weight-200);
+}
+
+.gds-size-300-semibold {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-300);
+  letter-spacing: var(--#{$prefix}-ls-300);
+  line-height: var(--#{$prefix}-lh-300);
+  font-weight: var(--#{$prefix}-weight-200);
+}
+
+.gds-size-400-semibold {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-400);
+  letter-spacing: var(--#{$prefix}-ls-400);
+  line-height: var(--#{$prefix}-lh-300);
+  font-weight: var(--#{$prefix}-weight-200);
+}
+
+.gds-size-500-semibold {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-500);
+  letter-spacing: var(--#{$prefix}-ls-500);
+  line-height: var(--#{$prefix}-lh-400);
+  font-weight: var(--#{$prefix}-weight-200);
+}
+
+.gds-size-600-semibold {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-600);
+  letter-spacing: var(--#{$prefix}-ls-600);
+  line-height: var(--#{$prefix}-lh-500);
+  font-weight: var(--#{$prefix}-weight-200);
+}
+
+.gds-size-700-semibold {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-700);
+  letter-spacing: var(--#{$prefix}-ls-700);
+  line-height: var(--#{$prefix}-lh-500);
+  font-weight: var(--#{$prefix}-weight-200);
+}
+
+.gds-size-800-semibold {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-800);
+  letter-spacing: var(--#{$prefix}-ls-800);
+  line-height: var(--#{$prefix}-lh-600);
+  font-weight: var(--#{$prefix}-weight-200);
+}
+
+.gds-size-900-semibold {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-900);
+  letter-spacing: var(--#{$prefix}-ls-900);
+  line-height: var(--#{$prefix}-lh-700);
+  font-weight: var(--#{$prefix}-weight-200);
+}
+
+.gds-size-1000-semibold {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-1000);
+  letter-spacing: var(--#{$prefix}-ls-1000);
+  line-height: var(--#{$prefix}-lh-800);
+  font-weight: var(--#{$prefix}-weight-200);
+}
+
+.gds-size-0-bold {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-0);
+  letter-spacing: var(--#{$prefix}-ls-0);
+  line-height: var(--#{$prefix}-lh-100);
+  font-weight: var(--#{$prefix}-weight-300);
+}
+
+.gds-size-100-bold {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-100);
+  letter-spacing: var(--#{$prefix}-ls-100);
+  line-height: var(--#{$prefix}-lh-200);
+  font-weight: var(--#{$prefix}-weight-300);
+}
+
+.gds-size-200-bold {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-200);
+  letter-spacing: var(--#{$prefix}-ls-200);
+  line-height: var(--#{$prefix}-lh-300);
+  font-weight: var(--#{$prefix}-weight-300);
+}
+
+.gds-size-300-bold {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-300);
+  letter-spacing: var(--#{$prefix}-ls-300);
+  line-height: var(--#{$prefix}-lh-300);
+  font-weight: var(--#{$prefix}-weight-300);
+}
+
+.gds-size-400-bold {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-400);
+  letter-spacing: var(--#{$prefix}-ls-400);
+  line-height: var(--#{$prefix}-lh-300);
+  font-weight: var(--#{$prefix}-weight-300);
+}
+
+.gds-size-500-bold {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-500);
+  letter-spacing: var(--#{$prefix}-ls-500);
+  line-height: var(--#{$prefix}-lh-400);
+  font-weight: var(--#{$prefix}-weight-300);
+}
+
+.gds-size-600-bold {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-600);
+  letter-spacing: var(--#{$prefix}-ls-600);
+  line-height: var(--#{$prefix}-lh-500);
+  font-weight: var(--#{$prefix}-weight-300);
+}
+
+.gds-size-700-bold {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-700);
+  letter-spacing: var(--#{$prefix}-ls-700);
+  line-height: var(--#{$prefix}-lh-500);
+  font-weight: var(--#{$prefix}-weight-300);
+}
+
+.gds-size-800-bold {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-800);
+  letter-spacing: var(--#{$prefix}-ls-800);
+  line-height: var(--#{$prefix}-lh-600);
+  font-weight: var(--#{$prefix}-weight-300);
+}
+
+.gds-size-900-bold {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-900);
+  letter-spacing: var(--#{$prefix}-ls-900);
+  line-height: var(--#{$prefix}-lh-700);
+  font-weight: var(--#{$prefix}-weight-300);
+}
+
+.gds-size-1000-bold {
+  font-family: var(--#{$prefix}-font-family);
+  font-size: var(--#{$prefix}-font-size-1000);
+  letter-spacing: var(--#{$prefix}-ls-1000);
+  line-height: var(--#{$prefix}-lh-800);
+  font-weight: var(--#{$prefix}-weight-300);
+}
+
+// Font weight utility classes
+.gds-fw-regular {
+  font-weight: var(--#{$prefix}-weight-100) !important;
+}
+
+.gds-fw-semibold {
+  font-weight: var(--#{$prefix}-weight-200) !important;
+}
+
+.gds-fw-bold {
+  font-weight: var(--#{$prefix}-weight-300) !important;
+}
+
+// Monospace
+@mixin gds-size-0-regular-monospace {
+  font-family: var(--#{$prefix}-font-family-monospace);
+  font-size: var(--#{$prefix}-font-size-0);
+  letter-spacing: var(--#{$prefix}-ls-0);
+  line-height: var(--#{$prefix}-lh-100);
+  font-weight: var(--#{$prefix}-weight-100);
+}
+
+@mixin gds-size-100-regular-monospace {
+  font-family: var(--#{$prefix}-font-family-monospace);
+  font-size: var(--#{$prefix}-font-size-100);
+  letter-spacing: var(--#{$prefix}-ls-100);
+  line-height: var(--#{$prefix}-lh-200);
+  font-weight: var(--#{$prefix}-weight-100);
+}
+
+@mixin gds-size-200-regular-monospace {
+  font-family: var(--#{$prefix}-font-family-monospace);
+  font-size: var(--#{$prefix}-font-size-200);
+  letter-spacing: var(--#{$prefix}-ls-200);
+  line-height: var(--#{$prefix}-lh-300);
+  font-weight: var(--#{$prefix}-weight-100);
+}
+
+@mixin gds-size-300-regular-monospace {
+  font-family: var(--#{$prefix}-font-family-monospace);
+  font-size: var(--#{$prefix}-font-size-300);
+  letter-spacing: var(--#{$prefix}-ls-300);
+  line-height: var(--#{$prefix}-lh-300);
+  font-weight: var(--#{$prefix}-weight-100);
+}
+
+@mixin gds-size-400-regular-monospace {
+  font-family: var(--#{$prefix}-font-family-monospace);
+  font-size: var(--#{$prefix}-font-size-400);
+  letter-spacing: var(--#{$prefix}-ls-400);
+  line-height: var(--#{$prefix}-lh-300);
+  font-weight: var(--#{$prefix}-weight-100);
+}
+
+@mixin gds-size-500-regular-monospace {
+  font-family: var(--#{$prefix}-font-family-monospace);
+  font-size: var(--#{$prefix}-font-size-500);
+  letter-spacing: var(--#{$prefix}-ls-500);
+  line-height: var(--#{$prefix}-lh-400);
+  font-weight: var(--#{$prefix}-weight-100);
+}
+
+@mixin gds-size-600-regular-monospace {
+  font-family: var(--#{$prefix}-font-family-monospace);
+  font-size: var(--#{$prefix}-font-size-600);
+  letter-spacing: var(--#{$prefix}-ls-600);
+  line-height: var(--#{$prefix}-lh-500);
+  font-weight: var(--#{$prefix}-weight-100);
+}
+
+@mixin gds-size-700-regular-monospace {
+  font-family: var(--#{$prefix}-font-family-monospace);
+  font-size: var(--#{$prefix}-font-size-700);
+  letter-spacing: var(--#{$prefix}-ls-700);
+  line-height: var(--#{$prefix}-lh-500);
+  font-weight: var(--#{$prefix}-weight-100);
+}
+
+@mixin gds-size-800-regular-monospace {
+  font-family: var(--#{$prefix}-font-family-monospace);
+  font-size: var(--#{$prefix}-font-size-800);
+  letter-spacing: var(--#{$prefix}-ls-800);
+  line-height: var(--#{$prefix}-lh-600);
+  font-weight: var(--#{$prefix}-weight-100);
+}
+
+@mixin gds-size-900-regular-monospace {
+  font-family: var(--#{$prefix}-font-family-monospace);
+  font-size: var(--#{$prefix}-font-size-900);
+  letter-spacing: var(--#{$prefix}-ls-900);
+  line-height: var(--#{$prefix}-lh-700);
+  font-weight: var(--#{$prefix}-weight-100);
+}
+
+@mixin gds-size-1000-regular-monospace {
+  font-family: var(--#{$prefix}-font-family-monospace);
+  font-size: var(--#{$prefix}-font-size-1000);
+  letter-spacing: var(--#{$prefix}-ls-1000);
+  line-height: var(--#{$prefix}-lh-800);
+  font-weight: var(--#{$prefix}-weight-100);
+}
+
+.gds-size-0-monospace {
+  font-family: var(--#{$prefix}-font-family-monospace);
+  font-size: var(--#{$prefix}-font-size-0);
+  letter-spacing: var(--#{$prefix}-ls-0);
+  line-height: var(--#{$prefix}-lh-100);
+  font-weight: var(--#{$prefix}-weight-100);
+}
+
+.gds-size-100-regular-monospace {
+  font-family: var(--#{$prefix}-font-family-monospace);
+  font-size: var(--#{$prefix}-font-size-100);
+  letter-spacing: var(--#{$prefix}-ls-100);
+  line-height: var(--#{$prefix}-lh-200);
+  font-weight: var(--#{$prefix}-weight-100);
+}
+
+.gds-size-200-regular-monospace {
+  font-family: var(--#{$prefix}-font-family-monospace);
+  font-size: var(--#{$prefix}-font-size-200);
+  letter-spacing: var(--#{$prefix}-ls-200);
+  line-height: var(--#{$prefix}-lh-300);
+  font-weight: var(--#{$prefix}-weight-100);
+}
+
+.gds-size-300-regular-monospace {
+  font-family: var(--#{$prefix}-font-family-monospace);
+  font-size: var(--#{$prefix}-font-size-300);
+  letter-spacing: var(--#{$prefix}-ls-300);
+  line-height: var(--#{$prefix}-lh-300);
+  font-weight: var(--#{$prefix}-weight-100);
+}
+
+.gds-size-400-regular-monospace {
+  font-family: var(--#{$prefix}-font-family-monospace);
+  font-size: var(--#{$prefix}-font-size-400);
+  letter-spacing: var(--#{$prefix}-ls-400);
+  line-height: var(--#{$prefix}-lh-300);
+  font-weight: var(--#{$prefix}-weight-100);
+}
+
+.gds-size-500-regular-monospace {
+  font-family: var(--#{$prefix}-font-family-monospace);
+  font-size: var(--#{$prefix}-font-size-500);
+  letter-spacing: var(--#{$prefix}-ls-500);
+  line-height: var(--#{$prefix}-lh-400);
+  font-weight: var(--#{$prefix}-weight-100);
+}
+
+.gds-size-600-regular-monospace {
+  font-family: var(--#{$prefix}-font-family-monospace);
+  font-size: var(--#{$prefix}-font-size-600);
+  letter-spacing: var(--#{$prefix}-ls-600);
+  line-height: var(--#{$prefix}-lh-500);
+  font-weight: var(--#{$prefix}-weight-100);
+}
+
+.gds-size-700-regular-monospace {
+  font-family: var(--#{$prefix}-font-family-monospace);
+  font-size: var(--#{$prefix}-font-size-700);
+  letter-spacing: var(--#{$prefix}-ls-700);
+  line-height: var(--#{$prefix}-lh-500);
+  font-weight: var(--#{$prefix}-weight-100);
+}
+
+.gds-size-800-regular-monospace {
+  font-family: var(--#{$prefix}-font-family-monospace);
+  font-size: var(--#{$prefix}-font-size-800);
+  letter-spacing: var(--#{$prefix}-ls-800);
+  line-height: var(--#{$prefix}-lh-600);
+  font-weight: var(--#{$prefix}-weight-100);
+}
+
+.gds-size-900-regular-monospace {
+  font-family: var(--#{$prefix}-font-family-monospace);
+  font-size: var(--#{$prefix}-font-size-900);
+  letter-spacing: var(--#{$prefix}-ls-900);
+  line-height: var(--#{$prefix}-lh-700);
+  font-weight: var(--#{$prefix}-weight-100);
+}
+
+.gds-size-1000-regular-monospace {
+  font-family: var(--#{$prefix}-font-family-monospace);
+  font-size: var(--#{$prefix}-font-size-1000);
+  letter-spacing: var(--#{$prefix}-ls-1000);
+  line-height: var(--#{$prefix}-lh-800);
+  font-weight: var(--#{$prefix}-weight-100);
+}

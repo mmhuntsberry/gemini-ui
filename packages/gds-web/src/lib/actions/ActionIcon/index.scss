@@ -1,0 +1,89 @@
+@import "@nielsen-media/gds-core";
+:host {
+  display: inline-block;
+}
+
+button {
+  background-color: transparent;
+  border: 2px solid transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  border-radius: var(--gds-radii-100);
+  cursor: pointer;
+  font-family: "Noto Sans";
+
+  &:focus-visible {
+    outline: unset;
+    border-color: var(--gds-blurple-600);
+    box-shadow: 0px 0px 0px 4px rgba(75, 49, 175, 0.24);
+  }
+
+  &:hover {
+    &[mode="light"] {
+      background-color: rgba(
+        186,
+        189,
+        201,
+        0.32
+      ); // figma doesn't specify which gray variable to use
+    }
+
+    &[mode="dark"] {
+      background-color: rgba(
+        72,
+        76,
+        91,
+        0.4
+      ); // figma doesn't specify which gray variable to use
+    }
+  }
+
+  &:active {
+    &[mode="light"] {
+      background-color: rgba(
+        186,
+        189,
+        201,
+        0.48
+      ); // figma doesn't specify which gray variable to use
+    }
+
+    &[mode="dark"] {
+      background-color: rgba(
+        72,
+        76,
+        91,
+        0.72
+      ); // figma doesn't specify which gray variable to use
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.32;
+    background-color: transparent;
+    &:hover {
+      background-color: transparent;
+    }
+  }
+
+  &[size="jumbo"] {
+    width: var(--gds-space-800);
+    height: var(--gds-space-800);
+    padding: var(--gds-space-100);
+  }
+  &[size="regular"] {
+    width: var(--gds-space-700);
+    height: var(--gds-space-700);
+  }
+  &[size="compact"] {
+    width: var(--gds-space-600);
+    height: var(--gds-space-600);
+  }
+  &[size="tiny"] {
+    width: var(--gds-space-500);
+    height: var(--gds-space-500);
+  }
+}

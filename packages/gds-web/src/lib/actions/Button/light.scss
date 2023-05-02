@@ -1,0 +1,172 @@
+@import "@nielsen-media/gds-core";
+
+// Backgrounds
+button[mode="light"][color="primary"] {
+  box-shadow: var(--gds-primary-500) 0px 0px 0px 2px inset;
+
+  &:hover:enabled {
+    background-color: var(--gds-primary-600);
+    box-shadow: var(--gds-primary-600) 0px 0px 0px 2px inset;
+  }
+
+  &:focus-visible {
+    outline: 6px solid rgba(#958cf8, 0.16);
+    box-shadow: var(--gds-primary-600) 0px 0px 0px 2px inset;
+  }
+
+  &:hover:active:enabled {
+    outline: 6px solid rgba(#958cf8, 0.16);
+  }
+}
+
+button[mode="light"][color="secondary"] {
+  box-shadow: var(--gds-neutral-800) 0px 0px 0px var(--gds-space-100) inset;
+
+  &:hover:enabled {
+    background-color: var(--gds-neutral-900);
+    box-shadow: var(--gds-neutral-900) 0px 0px 0px 2px inset;
+  }
+
+  &:focus-visible {
+    outline: 6px solid rgba(#787d91, 0.16);
+    box-shadow: var(--gds-neutral-900) 0px 0px 0px 2px inset;
+  }
+
+  &:hover:active:enabled {
+    outline: 6px solid rgba(#787d91, 0.16);
+  }
+}
+
+button[mode="light"][color="tertiary"] {
+  box-shadow: var(--gds-neutral-200) 0px 0px 0px var(--gds-space-100) inset;
+
+  &:hover:enabled {
+    background-color: var(--gds-neutral-200);
+    box-shadow: var(--gds-neutral-300) 0px 0px 0px 2px inset;
+  }
+
+  &:focus-visible {
+    outline: 6px solid rgba(#787d91, 0.16);
+    box-shadow: var(--gds-neutral-300) 0px 0px 0px 2px inset;
+  }
+
+  &:hover:active:enabled {
+    outline: 6px solid rgba(#787d91, 0.16);
+  }
+}
+
+button[mode="light"][color="danger"] {
+  box-shadow: var(--gds-danger-500) 0px 0px 0px var(--gds-space-100) inset;
+
+  &:hover:enabled {
+    background-color: var(--gds-danger-600);
+    box-shadow: var(--gds-danger-600) 0px 0px 0px 2px inset;
+  }
+
+  &:focus-visible {
+    outline: 6px solid rgba(230, 59, 49, 0.24);
+  }
+
+  &:hover:active:enabled {
+    outline: 6px solid rgba(230, 59, 49, 0.24);
+  }
+}
+
+// Background
+button[background="solid"][mode="light"][color="primary"] {
+  background-color: var(--gds-primary-500);
+}
+
+button[background="solid"][color="secondary"][mode="light"] {
+  background-color: var(--gds-neutral-800);
+}
+
+button[background="solid"][color="tertiary"][mode="light"] {
+  background-color: var(--gds-neutral-100);
+  color: var(--gds-black);
+}
+
+button[background="solid"][color="danger"][mode="light"] {
+  background-color: var(--gds-danger-500);
+}
+
+button[background="outlined"][mode="light"] {
+  background-color: none;
+
+  &:disabled {
+    background-color: transparent;
+  }
+}
+
+button[background="outlined"][color="primary"][mode="light"] {
+  color: var(--gds-primary-500);
+
+  &:hover:enabled {
+    background-color: var(--gds-primary-100);
+    box-shadow: var(--gds-primary-500) 0px 0px 0px 2px inset;
+  }
+}
+
+button[background="outlined"][color="secondary"][mode="light"] {
+  color: var(--gds-neutral-800);
+  background-color: var(--gds-white);
+
+  &:hover:enabled {
+    background-color: var(--gds-neutral-100);
+  }
+}
+
+button[background="outlined"][color="tertiary"][mode="light"] {
+  color: var(--gds-blurple-500);
+  background-color: var(--gds-white);
+
+  box-shadow: var(--gds-blurple-500) 0px 0px 0px var(--gds-space-100) inset;
+
+  &:hover:enabled {
+    background-color: var(--gds-blurple-100);
+    box-shadow: var(--gds-blurple-500) 0px 0px 0px var(--gds-space-100) inset;
+  }
+}
+
+button[background="outlined"][color="danger"][mode="light"] {
+  color: var(--gds-danger-500);
+
+  &:hover:enabled {
+    background-color: var(--gds-danger-100);
+    box-shadow: var(--gds-danger-500) 0px 0px 0px 2px inset;
+  }
+}
+
+button[background="transparent"][mode="light"] {
+  background-color: none;
+  border: none;
+  box-shadow: none;
+
+  &:hover:enabled {
+    background-color: var(--gds-neutral-100);
+    box-shadow: none;
+  }
+
+  &:focus-visible,
+  &:hover:active:enabled {
+    background-color: var(--gds-neutral-200);
+    outline: 0;
+    box-shadow: none;
+  }
+}
+
+button[background="transparent"][color="primary"][mode="light"] {
+  color: var(--gds-primary-500);
+}
+
+button[background="transparent"][color="secondary"][mode="light"] {
+  color: var(--gds-neutral-800);
+}
+
+button[background="transparent"][color="tertiary"][mode="light"] {
+  color: var(--gds-blurple-500);
+}
+
+button[background="transparent"][color="danger"][mode="light"] {
+  color: var(--gds-danger-500);
+}

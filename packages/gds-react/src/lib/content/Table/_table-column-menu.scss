@@ -1,0 +1,125 @@
+.gds-thead {
+  &[data-size="compact"] {
+    .gds-column-menu-wrapper {
+      padding-bottom: 8px;
+    }
+  }
+}
+
+.gds-column-menu-wrapper {
+  position: relative;
+  display: inline-flex;
+}
+
+.gds-column-menu {
+  position: absolute;
+  top: 24px;
+  border-radius: var(--gds-space-300);
+  overflow-x: visible;
+  margin-top: 24px;
+  overflow-y: auto;
+  margin: 0;
+  width: 132px;
+  padding: var(--gds-space-200) 0;
+  z-index: var(--gds-elevation-100);
+
+  &[data-mode="light"] {
+    background-color: var(--gds-white);
+    border: 2px solid var(--gds-gray-200);
+  }
+
+  &[data-mode="dark"] {
+    background-color: var(--gds-black);
+    border: 2px solid var(--gds-gray-800);
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: var(--gds-shadow-100);
+  }
+
+  // SCROLL BAR STYLES
+  // &::-webkit-scrollbar {
+  //   width: var(--gds-space-400);
+  //   transform: translateX(2px);
+  // }
+
+  // &::-webkit-scrollbar-track {
+  //   background-color: var(--gds-neutral-100);
+  //   border: 2px solid var(--gds-neutral-200);
+  //   border-right: none;
+  //   border-radius: var(--gds-radii-400);
+  // }
+
+  // &::-webkit-scrollbar-thumb {
+  //   border: 2px solid var(--gds-neutral-500);
+  //   background-color: var(--gds-neutral-300);
+  //   border-radius: var(--gds-radii-400);
+  // }
+}
+
+.gds-menu-item-button {
+  overflow: inherit;
+  border: 0;
+  background-color: transparent;
+  cursor: inherit;
+  margin: 0 auto;
+  pointer-events: all;
+  text-align: left;
+  width: 100%;
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: var(--gds-shadow-100);
+  }
+}
+
+.gds-menu-item-button {
+  &[data-size="regular"] {
+    padding: var(--space-250) var(--gds-space-500);
+    @include gds-size-400-regular;
+  }
+
+  &[data-size="compact"] {
+    padding: var(--gds-space-200) var(--gds-space-400);
+    @include gds-size-200-regular;
+  }
+
+  &.more-info {
+    margin-bottom: 16px;
+  }
+
+  // Divider styles between the two lists
+  &.pin-left::before {
+    content: "";
+    position: relative;
+    top: -13px;
+    display: block;
+    border-bottom: 2px solid var(--gds-neutral-200);
+    background-color: white;
+  }
+}
+
+.gds-menu-item {
+  &[data-mode="light"] {
+    background-color: var(--gds-white);
+
+    // Set button disabled state
+    .gds-menu-item-button {
+      &:disabled {
+        opacity: 0.68;
+        cursor: not-allowed;
+      }
+
+      // Set hover state for enable button
+      &:hover:enabled {
+        background-color: var(--gds-neutral-100);
+      }
+    }
+  }
+}

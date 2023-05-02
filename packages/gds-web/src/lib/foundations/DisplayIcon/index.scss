@@ -1,0 +1,22 @@
+@import "@nielsen-media/gds-core";
+:host {
+  display: inline-flex;
+}
+
+svg {
+  --background: var(--background);
+
+  // Accounts for size "96"
+  --radii: 48px;
+
+  background-color: var(--background, none);
+  border-radius: var(--radii, var(--gds-radii-600));
+  padding: var(--padding, 0);
+  overflow: visible;
+  --foreground: var(--foreground);
+  fill: var(--foreground, var(--black));
+
+  &[size="96"] {
+    border-radius: var(--radii, 48px);
+  }
+}

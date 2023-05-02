@@ -1,0 +1,248 @@
+// General element styles
+body {
+  font-family: var(--gds-font-family);
+}
+
+.table__adjustment-title-container {
+  margin: 0;
+  margin-bottom: 16px;
+
+  display: flex;
+  align-items: end;
+
+  justify-content: space-between;
+}
+
+.adjustment-bar {
+  // position: relative;
+  // left: -40px;
+}
+
+.gds-table-react {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.gds-thead-inner {
+  height: 100%;
+  width: 100%;
+}
+
+.gds-column-sort {
+  // margin: 0 auto;
+  display: flex;
+  border: 0;
+  background-color: transparent;
+  height: 100%;
+  width: 100%;
+  padding: 0 12px;
+
+  &--has-row-selection {
+    // border: 0;
+    // background-color: transparent;
+    // height: 100%;
+    white-space: nowrap;
+    // width: 100%;
+    padding: 0 12px;
+    cursor: pointer;
+  }
+
+  &--first-child {
+    justify-content: start;
+  }
+}
+
+.gds-column-sort {
+  display: flex;
+  // border: 0;
+  // background-color: transparent;
+  // height: 100%;
+  white-space: nowrap;
+  // width: 100%;
+  padding: 0 12px;
+  cursor: pointer;
+}
+
+.gds-th {
+  background-color: var(--gds-gray-100);
+  height: 48px;
+  width: 192px;
+  border-bottom: 2px solid var(--gds-neutral-200);
+  border-right: 2px solid var(--gds-neutral-200);
+  cursor: pointer;
+}
+
+.gds-td {
+  background-color: var(--gds-white);
+  border-bottom: 2px solid var(--gds-neutral-200);
+}
+
+// ***** STYLES BASED ON STATES ***** //
+
+.table__title {
+  margin: 0;
+  &[data-size="tiny"] {
+    @include gds-size-500-semibold;
+  }
+  &[data-size="compact"] {
+    @include gds-size-700-semibold;
+  }
+}
+
+// Column Header Heights
+.gds-th {
+  &[data-size="tiny"] {
+    // 36px is a custom size
+    height: 36px;
+
+    // Align Column Header Labels
+    .gds-column-sort {
+      align-items: center;
+
+      // This aligns the column header text and
+      // the asc/desc display icon at the baseline
+      span {
+        // 6px is a custom size
+        padding-top: 6px;
+      }
+    }
+
+    // Align Column menu icons and column header text
+    .gds-thead-inner {
+      align-items: center;
+    }
+  }
+
+  .gds-column-sort {
+    &[data-text-alignment="left"] {
+      text-align: left;
+    }
+    &[data-text-alignment="center"] {
+      justify-content: center;
+    }
+    &[data-text-alignment="right"] {
+      justify-content: end;
+    }
+  }
+
+  .gds-column-sort.gds-column-sort--first-child {
+    justify-content: start;
+  }
+
+  &[data-size="compact"] {
+    height: var(--gds-space-900);
+    // Align Column Header Labels
+    .gds-column-sort {
+      align-items: flex-end;
+      padding-bottom: var(--gds-space-300);
+    }
+
+    .gds-thead-inner {
+      align-items: end;
+    }
+  }
+}
+
+.gds-thead-inner {
+  &[data-menu="true"] {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 12px;
+  }
+
+  // &[data-menu="false"] {
+  //   padding-right: var(--gds-space-0);
+  // }
+}
+
+// Header background colors
+.gds-th {
+  &[data-background="default"] {
+    background-color: var(--gds-gray-100);
+  }
+
+  &[data-background="none"] {
+    background-color: var(--gds-white);
+  }
+
+  &[data-background="blurple"] {
+    background-color: var(--gds-blurple-100);
+  }
+
+  &[data-background="aqua"] {
+    background-color: var(--gds-aqua-100);
+  }
+
+  &[data-background="orange"] {
+    background-color: var(--gds-orange-100);
+  }
+}
+
+.gds-td {
+  padding: 0 var(--gds-space-400);
+
+  &[data-size="tiny"] {
+    height: var(--gds-space-700);
+    @include gds-size-200-regular;
+
+    &:nth-child(1) {
+      @include gds-size-200-bold;
+    }
+  }
+
+  &[data-size="compact"] {
+    height: var(--gds-space-800);
+    @include gds-size-200-regular;
+
+    &:nth-child(1) {
+      @include gds-size-200-bold;
+    }
+  }
+
+  &[data-size="regular"] {
+    height: var(--gds-space-900);
+    @include gds-size-400-regular;
+
+    &:nth-child(1) {
+      @include gds-size-400-bold;
+    }
+  }
+
+  // TD Text alignments
+  &[data-text-alignment="left"] {
+    text-align: left;
+  }
+
+  &[data-text-alignment="right"] {
+    text-align: right;
+  }
+
+  &[data-text-alignment="center"] {
+    text-align: center;
+  }
+
+  // Style rows that are selected
+  &.selected {
+    background-color: var(--gds-blurple-100);
+  }
+}
+
+.gds-tbody {
+  tr {
+    &:hover {
+      .gds-td {
+        background-color: var(--gds-gray-100);
+
+        &.selected {
+          background-color: var(--gds-blurple-100);
+        }
+      }
+    }
+    &:active {
+      // .gds-td {
+      //   background-color: var(--gds-blurple-100);
+      // }
+    }
+  }
+}

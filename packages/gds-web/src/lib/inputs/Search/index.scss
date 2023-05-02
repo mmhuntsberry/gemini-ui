@@ -1,0 +1,229 @@
+@import "@nielsen-media/gds-core";
+
+:host {
+  display: inline;
+  z-index: var(--gds-elevation-100);
+}
+
+.input-container {
+  &[width="full"] {
+    width: 256px;
+    border-radius: var(--gds-radii-600);
+  }
+}
+
+.input-container {
+  align-items: center;
+  border: 2px solid var(--gds-neutral-200);
+  background-color: var(--gds-neutral-100);
+  display: grid;
+  grid-template-columns: min-content 1fr min-content;
+  overflow: hidden;
+  padding: var(--gds-space-200) var(--gds-space-400);
+  width: 178px;
+
+  &[mode="light"] {
+    background-color: var(--gds-neutral-100);
+  }
+
+  &[mode="dark"] {
+    background-color: var(--gds-neutral-900);
+  }
+
+  &[rounded="all"] {
+    border-radius: var(--gds-radii-600);
+  }
+
+  &[rounded="left"] {
+    border-bottom-left-radius: var(--gds-radii-600);
+    border-top-left-radius: var(--gds-radii-600);
+  }
+
+  &[rounded="right"] {
+    border-bottom-right-radius: var(--gds-radii-600);
+    border-top-right-radius: var(--gds-radii-600);
+  }
+}
+
+input {
+  background: none;
+  border: none;
+  color: var(--gds-black);
+
+  &::placeholder {
+    color: var(--gds-neutral-600);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+[disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+
+  input {
+    cursor: not-allowed;
+  }
+}
+
+// Misc styles
+input {
+  width: 100%;
+}
+
+// Size
+[size="regular"] {
+  input {
+    @include gds-size-500-regular;
+    padding: var(--gds-space-400) 0 var(--gds-space-400) var(--gds-space-500);
+  }
+
+  &[icon="true"] {
+    input {
+      padding-left: 48px;
+    }
+
+    gds-display-icon {
+      left: var(--gds-space-500);
+      top: 11px;
+    }
+  }
+}
+
+[size="compact"] {
+  input {
+    @include gds-size-300-regular;
+    padding: var(--space-250) 0 var(--space-250) var(--gds-space-400);
+  }
+
+  &[icon="true"] {
+    input {
+      padding-left: 40px;
+    }
+
+    gds-display-icon {
+      left: var(--gds-space-400);
+      top: 4px;
+    }
+  }
+}
+
+// Light Theme
+[mode="light"] {
+  input {
+    background-color: var(--gds-neutral-100);
+
+    &::placeholder {
+      color: var(--gds-neutral-600);
+    }
+  }
+
+  &[error="true"] {
+    input {
+      background-color: var(--gds-danger-100);
+      box-shadow: var(--gds-danger-500) 0px 0px 0px 2px inset;
+
+      &::placeholder {
+        color: var(--gds-neutral-600);
+      }
+
+      &:focus {
+        outline: 2px solid var(--gds-danger-500);
+        box-shadow: rgba(230, 59, 49, 0.24) 0px 0px 0px 6px;
+      }
+    }
+  }
+
+  &[alt="true"] {
+    input {
+      background-color: var(--gds-white);
+    }
+  }
+}
+
+[icon="true"] {
+  position: relative;
+
+  gds-display-icon {
+    position: absolute;
+  }
+}
+
+// Dark Theme
+[mode="dark"] {
+  input {
+    background-color: var(--gds-neutral-900);
+    color: var(--gds-white);
+
+    &::placeholder {
+      color: var(--gds-neutral-400);
+    }
+  }
+
+  &[error="true"] {
+    input {
+      background-color: var(--gds-danger-1000);
+      box-shadow: var(--gds-danger-500) 0px 0px 0px 2px inset;
+
+      &::placeholder {
+        color: var(--gds-neutral-400);
+      }
+
+      &:focus {
+        outline: 2px solid var(--gds-danger-500);
+        box-shadow: rgba(230, 59, 49, 0.24) 0px 0px 0px 6px;
+      }
+    }
+  }
+
+  &[alt="true"] {
+    input {
+      background-color: var(--gds-black);
+    }
+  }
+}
+
+.input-container input:focus,
+.input-container button:focus {
+  outline: 0;
+}
+
+.input-container:hover {
+  &[mode="light"] {
+    background-color: var(--gds-neutral-200);
+
+    input {
+      background-color: var(--gds-neutral-200);
+    }
+  }
+
+  &[mode="dark"] {
+    background-color: var(--gds-neutral-800);
+
+    input {
+      background-color: var(--gds-neutral-800);
+    }
+  }
+}
+
+.input-container:focus-within {
+  &[mode="light"] {
+    outline: 6px solid rgba(#958cf8, 0.16);
+    border: 2px solid var(--gds-blurple-400);
+  }
+
+  &[mode="dark"] {
+    outline: 6px solid rgba(#6346fe, 0.16);
+    border: 2px solid var(--gds-blurple-600);
+  }
+
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+input {
+  @include gds-size-300-regular;
+  border: 0;
+  height: 100%;
+}

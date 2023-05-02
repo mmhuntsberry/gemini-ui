@@ -1,0 +1,89 @@
+@import "@nielsen-media/gds-core";
+
+// Reset
+button {
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+// Initial
+button {
+  border-radius: var(--gds-radii-300);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+// Theme
+button {
+  &[disabled="true"] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &[mode="light"] {
+    background-color: var(--gds-neutral-100);
+    box-shadow: var(--gds-neutral-200) 0px 0px 0px 2px inset;
+
+    &:focus {
+      outline: 2px solid var(--gds-primary-400);
+      box-shadow: rgba(149, 140, 248, 0.16) 0px 0px 0px 6px;
+    }
+
+    &[error="true"] {
+      background-color: var(--gds-danger-100);
+      box-shadow: var(--gds-danger-500) 0px 0px 0px 2px inset;
+
+      &:focus {
+        outline: 2px solid var(--gds-danger-500);
+        box-shadow: rgba(230, 59, 49, 0.24) 0px 0px 0px 6px;
+      }
+    }
+
+    &[alt="true"] {
+      background-color: var(--gds-white);
+    }
+  }
+
+  &[mode="dark"] {
+    background-color: var(--gds-neutral-900);
+    box-shadow: var(--gds-neutral-800) 0px 0px 0px 2px inset;
+    color: var(--gds-white);
+
+    &:focus {
+      outline: 2px solid var(--gds-primary-400);
+      box-shadow: rgba(149, 140, 248, 0.16) 0px 0px 0px 6px;
+    }
+
+    &[error="true"] {
+      background-color: var(--gds-danger-1000);
+      box-shadow: var(--gds-danger-500) 0px 0px 0px 2px inset;
+
+      &:focus {
+        outline: 2px solid var(--gds-danger-500);
+        box-shadow: rgba(230, 59, 49, 0.24) 0px 0px 0px 6px;
+      }
+    }
+
+    &[alt="true"] {
+      background-color: var(--gds-black);
+    }
+  }
+}
+
+// Size
+button {
+  &[size="regular"] {
+    padding: var(--gds-space-400) var(--gds-space-300) var(--gds-space-400)
+      var(--gds-space-500);
+  }
+
+  &[size="compact"] {
+    padding: var(--gds-space-200) var(--gds-space-300) var(--gds-space-200)
+      var(--gds-space-400);
+  }
+}

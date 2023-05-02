@@ -1,0 +1,21 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../dist/out-tsc",
+    "declaration": true,
+    "types": ["vite/client"],
+    "composite": true
+  },
+  "files": ["../gds-types/dist/index.d.ts", "../gds-types/dist/index.js"],
+
+  "include": ["**/*.ts", "../../raw-loader.d.ts", "*.ts"],
+  "exclude": [
+    "jest.config.ts",
+    "**/*.spec.ts",
+    "**/*.test.ts",
+    "**/*.stories.ts",
+    "**/*.stories.js",
+    "**/*.stories.jsx",
+    "**/*.stories.tsx"
+  ]
+}

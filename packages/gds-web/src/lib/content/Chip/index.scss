@@ -1,0 +1,118 @@
+@import "@nielsen-media/gds-core";
+
+:host,
+:root {
+  display: inline-flex;
+  --space-250: 6px;
+  --white-0: #ffffff;
+  --black-0: #111218;
+}
+
+.gds-chip {
+  border: none;
+  display: inline-flex;
+  align-items: center;
+
+  // Size
+  &.regular {
+    @include gds-size-300-semibold;
+    padding: var(--space-250) var(--gds-space-300);
+    border-radius: var(--gds-radii-200);
+  }
+  &.compact {
+    @include gds-size-200-semibold;
+    padding: var(--gds-space-100) var(--gds-space-300);
+    border-radius: var(--gds-radii-200);
+  }
+  &.tiny {
+    font-size: var(--gds-font-size-100);
+    font-weight: var(--gds-weight-200);
+    padding: var(--gds-space-100) var(--gds-space-200);
+    border-radius: var(--gds-radii-200);
+  }
+
+  // Colors
+  &.gray {
+    background-color: var(--gds-gray-200);
+    &.dark {
+      background-color: var(--gds-gray-800);
+    }
+  }
+  &.gray-alt {
+    background-color: var(--gds-gray-100);
+    &.dark {
+      background-color: var(--gds-gray-900);
+    }
+  }
+  &.blurple {
+    background-color: var(--gds-blurple-200);
+    &.dark {
+      background-color: var(--gds-blurple-800);
+    }
+  }
+  &.aqua {
+    background-color: var(--gds-aqua-200);
+    &.dark {
+      background-color: var(--gds-aqua-800);
+    }
+  }
+  &.eggplant {
+    background-color: var(--gds-eggplant-200);
+    &.dark {
+      background-color: var(--gds-eggplant-800);
+    }
+  }
+  &.blue {
+    background-color: var(--gds-blue-200);
+    &.dark {
+      background-color: var(--gds-blue-900);
+    }
+  }
+  &.green {
+    background-color: var(--gds-green-200);
+    &.dark {
+      background-color: var(--gds-green-900);
+    }
+  }
+  &.red {
+    background-color: var(--gds-red-200);
+    &.dark {
+      background-color: var(--gds-red-800);
+    }
+  }
+  &.orange {
+    background-color: var(--gds-orange-200);
+    &.dark {
+      background-color: var(--gds-orange-800);
+    }
+  }
+  &.yellow {
+    background-color: var(--gds-yellow-200);
+    &.dark {
+      background-color: var(--gds-yellow-900);
+    }
+  }
+
+  .gds-chip-label {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 24ch;
+    color: var(--gds-black);
+  }
+
+  &.dark {
+    .gds-chip-label {
+      color: var(--gds-white);
+    }
+  }
+}
+
+.left-icon {
+  margin-right: var(--gds-space-200);
+}
+
+.right-icon {
+  margin-left: var(--gds-space-200);
+}

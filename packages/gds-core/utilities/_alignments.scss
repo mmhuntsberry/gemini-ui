@@ -1,0 +1,35 @@
+// $alignments : (
+//   "center",
+//   "space-between",
+//   "space-around",
+//   "space-evenly",
+//   "flex-start", 
+//   "flex-end",
+//   "baseline"
+// );
+
+// @each $align in $alignments {
+//   .#{$prefix}-justify-content-#{$align} {
+//     justify-content: #{$align};
+//   }
+  
+//   .#{$prefix}-justify-items-#{$align} {
+//     justify-items: #{$align};
+//   }
+  
+//   .#{$prefix}-justify-self-#{$align} {
+//     justify-self: #{$align};
+//   }
+
+//   .#{$prefix}-align-content-#{$align} {
+//     align-content: #{$align};
+//   }
+  
+//   .#{$prefix}-align-items-#{$align} {
+//     align-items: #{$align};
+//   }
+  
+//   .#{$prefix}-align-self-#{$align} {
+//     align-self: #{$align};
+//   }
+// }

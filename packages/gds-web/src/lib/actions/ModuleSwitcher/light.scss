@@ -1,0 +1,47 @@
+@import "@nielsen-media/gds-core";
+button[background="outlined"][mode="light"] {
+  background: var(--gds-white);
+  background-size: 100%;
+
+  padding-top: 2px;
+  padding-bottom: 2px;
+
+  span.module-text {
+    padding: 2px;
+    white-space: nowrap;
+  }
+}
+
+button[background="outlined"][type="standard"][mode="light"] {
+  span.module-text {
+    background: var(--gds-secondary-gradient);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+  }
+
+  &:focus-visible {
+    outline: 6px solid rgba(#958cf8, 0.16);
+  }
+}
+
+button[background="outlined"][type="n1"][mode="light"] {
+  span.module-text {
+    background: var(--gds-primary-gradient-300);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+  }
+
+  &:focus-visible {
+    outline: 4px solid var(--gds-gray-100);
+    outline-offset: 2px;
+  }
+
+  &:active:enabled {
+    outline: 4px solid var(--gds-gray-100);
+    outline-offset: 2px;
+  }
+}

@@ -1,0 +1,31 @@
+image: node:16.16.0
+
+pages:
+  script:
+    - mkdir .public
+    - cp -r storybook .public
+    - mv .public public
+  artifacts:
+    paths:
+      - public
+  only:
+    - development
+  tags:
+    - blue
+    - prod
+
+publish:
+  script:
+    - npm run publish:gds-core
+    - npm run publish:gds-react
+    - npm run publish:gds-web
+    - npm run publish:gds-utilities
+    - npm run publish:gds-types
+  only:
+    - main
+  tags:
+    - blue
+    - prod
+# TODO - SET UP PUBLISH ON MAIN
+# npm run bootstrap
+# npm publish

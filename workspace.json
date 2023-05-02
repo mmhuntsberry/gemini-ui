@@ -1,0 +1,11 @@
+{
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "gds-core": "packages/gds-core",
+    "gds-react": "packages/gds-react",
+    "gds-types": "packages/gds-types",
+    "gds-utilities": "packages/gds-utilities",
+    "gds-web": "packages/gds-web"
+  }
+}

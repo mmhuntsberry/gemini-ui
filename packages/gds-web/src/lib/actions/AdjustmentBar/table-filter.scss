@@ -1,0 +1,92 @@
+@import "@nielsen-media/gds-core";
+:host {
+  --space-250: 6px;
+  display: inline-block;
+}
+
+.filter-container {
+  position: relative;
+  height: 140px;
+  border-radius: var(--gds-space-300);
+  // The width of the menu should be determined
+  // by the width of the button.
+  width: 768px;
+  min-height: 140px;
+  height: auto;
+  // min-height: var(--gds-layout-200);
+  overflow-x: visible;
+  overflow-y: auto;
+
+  padding: var(--gds-space-200) var(--gds-space-600);
+  z-index: var(--gds-elevation-100);
+
+  &[mode="light"] {
+    background-color: var(--gds-white);
+    border: 2px solid var(--gds-gray-200);
+  }
+
+  &[mode="dark"] {
+    background-color: var(--gds-black);
+    border: 2px solid var(--gds-gray-800);
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: var(--gds-shadow-100);
+  }
+
+  &::-webkit-scrollbar {
+    width: var(--gds-space-400);
+    transform: translateX(2px);
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: var(--gds-neutral-100);
+    border: 2px solid var(--gds-neutral-200);
+    border-right: none;
+    border-radius: var(--gds-radii-400);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border: 2px solid var(--gds-neutral-500);
+    background-color: var(--gds-neutral-300);
+    border-radius: var(--gds-radii-400);
+  }
+}
+
+ul {
+  padding-left: 0;
+  display: grid;
+  list-style: none;
+}
+
+p {
+  margin: 0;
+  padding-left: var(--gds-space-900);
+}
+
+.container-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-title {
+  @include gds-size-300-semibold;
+  color: var(--gds-neutral-600);
+  margin: 0;
+}
+
+li[role="menu-item"] {
+  display: grid;
+  grid-template-columns: min-content minmax(160px, auto) 1fr min-content;
+  grid-template-rows: min-content;
+  align-items: center;
+  gap: var(--gds-space-400);
+}
+
+.add-filter-container {
+  margin-bottom: var(--gds-space-400);
+  display: flex;
+  justify-content: center;
+}

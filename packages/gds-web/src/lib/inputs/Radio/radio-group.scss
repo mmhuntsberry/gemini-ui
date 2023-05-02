@@ -1,0 +1,26 @@
+@import "@nielsen-media/gds-core";
+fieldset {
+  border: none;
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+
+  gap: var(--gds-space-300);
+
+  &[disable="true"] {
+    opacity: 0.5;
+    pointer-events: none;
+
+    input {
+      cursor: not-allowed;
+    }
+  }
+}
+
+fieldset[direction="vertical"] {
+  flex-direction: column;
+}
+
+fieldset[direction="horizontal"] {
+  flex-direction: row;
+}

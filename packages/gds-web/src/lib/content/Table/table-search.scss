@@ -1,0 +1,89 @@
+@import "@nielsen-media/gds-core";
+:host {
+  display: inline;
+  z-index: var(--gds-elevation-100);
+}
+
+.input-container {
+  &[width="full"] {
+    width: 256px;
+    border-radius: var(--gds-radii-600);
+  }
+}
+
+.input-container {
+  align-items: center;
+  border: 2px solid var(--gds-neutral-200);
+  background-color: var(--gds-neutral-100);
+  display: grid;
+  grid-template-columns: min-content 1fr min-content;
+  overflow: hidden;
+  padding: var(--gds-space-200) var(--gds-space-400);
+  // padding: var(--gds-space-200) var(--gds-space-400);
+  width: 178px;
+
+  &[rounded="all"] {
+    border-radius: var(--gds-radii-600);
+  }
+
+  &[rounded="left"] {
+    border-bottom-left-radius: var(--gds-radii-600);
+    border-top-left-radius: var(--gds-radii-600);
+  }
+
+  &[rounded="right"] {
+    border-bottom-right-radius: var(--gds-radii-600);
+    border-top-right-radius: var(--gds-radii-600);
+  }
+}
+
+.input-container input:focus,
+.input-container button:focus {
+  outline: 0;
+}
+
+.input-container:hover {
+  // cursor: pointer;
+  background-color: var(--gds-neutral-200);
+
+  input {
+    // cursor: pointer;
+
+    background-color: var(--gds-neutral-200);
+    // transition: background-color 0.14s ease;
+  }
+}
+
+input::placeholder {
+  color: var(--gds-black);
+}
+
+.input-container:focus-within {
+  outline: 6px solid rgba(#958cf8, 0.16);
+  border: 2px solid var(--gds-blurple-400);
+
+  // transition: box-shadow 0.2s ease-in-out;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+input {
+  @include gds-size-300-regular;
+
+  // Custom width for the input is needed because of placeholder and
+  // the action button
+  width: 110px;
+  background-color: var(--gds-neutral-100);
+  color: var(--gds-blurple-600);
+  border: 0;
+  height: 100%;
+  outline: 0;
+  padding-left: 4px;
+}
+
+.input-container:active {
+  outline: 6px solid rgba(#958cf8, 0.16);
+  border: 2px solid var(--gds-blurple-400);
+
+  // transition: box-shadow 0.2s ease-in-out;
+  transition: box-shadow 0.2s ease-in-out;
+}

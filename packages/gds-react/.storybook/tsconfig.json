@@ -1,0 +1,35 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "outDir": ""
+  },
+  "files": [
+    "../../../node_modules/@nrwl/react/typings/styled-jsx.d.ts",
+    "../../../node_modules/@nrwl/react/typings/cssmodule.d.ts",
+    "../../../node_modules/@nrwl/react/typings/image.d.ts",
+    "../src/global.d.ts"
+  ],
+
+  "exclude": [
+    "../**/*.spec.ts",
+    "../**/*.spec.js",
+    "../**/*.spec.tsx",
+    "../**/*.spec.jsx"
+  ],
+  "include": [
+    "../src/**/*.stories.ts",
+    "../src/**/*.stories.js",
+    "../src/**/*.stories.jsx",
+    "../src/**/*.stories.tsx",
+    "../src/**/*.stories.mdx",
+    "*.js",
+    "../src/lib/content/Table/basic-table-2-sorting.stories.bak",
+    "../src/lib/content/Table/basic-table-1-header.stories.bak",
+    "../src/lib/content/Table/basic-table-4-web-components.stories.bak",
+    "../src/lib/content/Table/basic-table-3-column-menu.stories.bak",
+    "../src/lib/content/Table/basic-table-5-row-selection.stories.bak",
+    "../src/lib/content/Table/basic-table-6-adjustment-bar-search.stories.bak",
+    "../src/lib/content/Table/table-playground.stories.bak"
+  ]
+}

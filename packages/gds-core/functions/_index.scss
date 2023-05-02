@@ -1,0 +1,19 @@
+// Function to generate design system padding
+@function createspacing($base-spacer, $max) {
+  $spacer: $base-spacer;
+  $spacers: (0: 0);
+
+  @for $i from 1 through $max {
+    $spacers: map-merge($spacers,
+      (spacing-#{$i}: ($i * $spacer,
+        ),
+      ));
+  }
+
+  @return $spacers;
+}
+
+// Getter to return a Custom Property
+@function cssvar($name, $prefix: $prefix) {
+  @return var(--#{$prefix}-#{$name});
+}

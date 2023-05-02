@@ -1,0 +1,10 @@
+{
+  "name": "@nielsen-media/gds-types",
+  "description": "TypeScript definitions for GDS Components",
+  "version": "0.1.3-beta",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "type": "module"
+}

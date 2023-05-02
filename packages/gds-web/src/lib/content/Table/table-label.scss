@@ -1,0 +1,22 @@
+@import "@nielsen-media/gds-core";
+span {
+  white-space: nowrap;
+  text-transform: uppercase;
+  @include gds-size-100-bold;
+
+  &[mode="light"] {
+    color: var(--gds-black);
+  }
+
+  &[mode="dark"] {
+    color: var(--gds-white);
+  }
+
+  &[weight="regular"] {
+    font-weight: var(--gds-weight-100);
+  }
+
+  &[weight="bold"] {
+    font-weight: var(--gds-weight-300);
+  }
+}
