@@ -1,4 +1,4 @@
-name: Deploy Storybook
+name: Deploy Storybook to GitHub Pages
 
 on:
   push:
@@ -10,37 +10,25 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout Repository
+      - name: Checkout Code
         uses: actions/checkout@v2
 
       - name: Setup Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v2.4.4
         with:
-          node-version: 16
+          node-version: "14.x"
 
       - name: Install Dependencies
-        run: npm i --legacy-peer-deps
+        run: npm ci
 
       - name: Build Storybook
-        run: |
-          if [[ $GITHUB_REF == "refs/heads/feature" ]]; then
-            npm run prod:gds-react
-          elif [[ $GITHUB_REF == "refs/heads/stage" ]]; then
-            npm run prod:gds-web
-          else
-            npm run prod:gds-react && npm run prod:gds-web
-          fi
+        run: npm run prod:gds-web
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v3.8.0
         with:
           github_token: ${{ secrets.GEMINI_UI }}
-          publish_dir: ./storybook-static
-          cname: ${{ github.ref_name }}-storybook.mmhuntsberry.github.io
-          branch: gh-pages
-          keep_files: true
-          commit_message: "Update Storybook for ${{ github.ref_name }} branch"
-          user_name: "GitHub Actions"
-          user_email: "github-actions@users.noreply.github.com"
+          publish_dir: ./packages/gds-web/storybook-static
+          cname: ${{ github.repository_owner }}.github.io
+          cname_target: gemini-ui-storybook-${{ github.ref_name }}.mmhuntsberry.com
